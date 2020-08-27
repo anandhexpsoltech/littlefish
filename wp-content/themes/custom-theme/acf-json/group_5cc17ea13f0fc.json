@@ -1,0 +1,40 @@
+{
+    "key": "group_5cc17ea13f0fc",
+    "title": "Video Options",
+    "fields": [
+        {
+            "key": "field_5cc17e960f70d",
+            "label": "Video URL",
+            "name": "video_url",
+            "type": "url",
+            "instructions": "Example: https:\/\/player.vimeo.com\/video\/331959576",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-video.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1573915982
+}

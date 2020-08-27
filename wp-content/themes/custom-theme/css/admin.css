@@ -1,0 +1,94 @@
+body.user-id-1 #wp-toolbar #wp-admin-bar-root-default::after {
+    content: 'Stylesheet version: 1.0.15';
+    color: red;
+    padding: 0 8px 0 7px;
+    float: left;
+}
+
+body.user-hidden-css .page-title-action,
+body.user-hidden-css #adminmenu > li,
+body.user-hidden-css #wp-admin-bar-root-default > li,
+body.user-hidden-css #adminmenu > #menu-posts-client ul li:nth-child(3),
+body.user-hidden-css #adminmenu > #menu-posts-client ul li:nth-child(4),
+body.user-hidden-css #adminmenu > #menu-posts-client ul li:nth-child(5),
+body.user-hidden-css #dashboard-widgets-wrap,
+body.user-hidden-css .wrap h1,
+body.user-hidden-css #adminmenu > #menu-posts-project li:nth-child(3),
+body.user-hidden-css #adminmenu > #menu-posts-project li:nth-child(4),
+body.user-hidden-css #adminmenu > #menu-posts-project li:nth-child(5),
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #post-body-content,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #wpseo_meta,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #project-categorydiv,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #postexcerpt,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #postimagediv,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #submitdiv #minor-publishing-actions,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #submitdiv .misc-pub-post-status,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #submitdiv .misc-pub-visibility,
+body.user-hidden-css.post-type-project #wpbody-content #poststuff #submitdiv .yoast-seo-score,
+body.user-hidden-css.post-type-project .acf-tab-group li:nth-child(1),
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="address"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="address"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="street_name"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="district_name"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="custom_content"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="bedrooms"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="bathrooms"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="garages"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="distance"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="distance_label"],
+body.user-hidden-css.post-type-project .acf-fields > .acf-field[data-name="icon_color"],
+body.user-hidden-css.post-type-client #titlediv,
+body.user-hidden-css #wpseo_meta,
+body.user-hidden-css #commentstatusdiv,
+body.user-hidden-css #commentsdiv,
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(1),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(2),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(3),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(4),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(5),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(6),
+body.user-hidden-css.post-type-client .acf-tab-group li:nth-child(7),
+body.user-hidden-css .acf-fields > .acf-field[data-name="project_address"],
+body.user-hidden-css .acf-fields > .acf-field[data-name="project_suburb"],
+body.user-hidden-css .acf-fields > .acf-field[data-name="google_document"],
+body.user-hidden-css .acf-fields > .acf-field[data-name="google_document_height"],
+body.user-hidden-css .acf-fields > .acf-field[data-name="client_id"],
+body.user-hidden-css .acf-fields > .acf-field[data-name="toggle_form"],
+body.user-hidden-css #snp-cf-gsp {
+    display: none;
+}
+
+body.user-editor-css-1.post-type-client .acf-tab-group li:nth-child(2),
+body.user-editor-css-1.post-type-client .acf-tab-group li:nth-child(3),
+body.user-editor-css-1.post-type-client .acf-tab-group li:nth-child(7),
+body.user-editor-css-1 #adminmenu > #menu-posts-client,
+body.user-editor-css-1 #adminmenu > #menu-posts-project,
+body.user-editor-css-1 #wp-admin-bar-root-default > #wp-admin-bar-site-name {
+    display: block !important;
+}
+
+body.user-editor-css-2 #wp-admin-bar-root-default > #wp-admin-bar-site-name,
+body.user-editor-css-2 #adminmenu > #menu-posts-project,
+body.user-editor-css-2.post-type-project .acf-tab-group li:nth-child(2),
+body.user-editor-css-2.post-type-project .acf-fields > .acf-field[data-name="updates_title"],
+body.user-editor-css-2.post-type-project .acf-fields > .acf-field[data-name="updates_latest"],
+body.user-editor-css-2.post-type-project .acf-fields > .acf-field[data-name="updates"] {
+    display: block !important;
+}
+
+body.user-hidden-css .wrap h1.wp-heading-inline {
+    display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Proximanovasemibold', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: #4f5360;
+}

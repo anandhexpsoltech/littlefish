@@ -1,0 +1,157 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: wpDiscuz - Advanced Liking\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-30 09:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: class.WpdiscuzVoters.php:66
+msgid "wpDiscuz Advanced Liking requires wpDiscuz to be installed!"
+msgstr ""
+
+#: settings/class.WVSettings.php:75
+msgid "Member"
+msgstr ""
+
+#: settings/class.WVSettings.php:87
+msgid "Active Member"
+msgstr ""
+
+#: settings/class.WVSettings.php:99
+msgid "Trusted Member"
+msgstr ""
+
+#: settings/class.WVSettings.php:111
+msgid "Noble Member"
+msgstr ""
+
+#: settings/class.WVSettings.php:123
+msgid "Famed Member"
+msgstr ""
+
+#: settings/class.WVSettings.php:133 settings/class.WVSettings.php:280
+msgid "Guests"
+msgstr ""
+
+#: settings/class.WVSettings.php:134 settings/class.WVSettings.php:231
+#: settings/class.WVSettings.php:287
+msgid "View all"
+msgstr ""
+
+#: settings/class.WVSettings.php:209
+msgid "Advanced Likers"
+msgstr ""
+
+#: settings/class.WVSettings.php:217
+msgid "Display avatars on quick list of likers pop-up"
+msgstr ""
+
+#: settings/class.WVSettings.php:224
+msgid "Real time"
+msgstr ""
+
+#: settings/class.WVSettings.php:238
+msgid "Display avatars on full likers list"
+msgstr ""
+
+#: settings/class.WVSettings.php:245
+msgid "Max number of likers on quick pop-up window"
+msgstr ""
+
+#: settings/class.WVSettings.php:252
+msgid "Max number of likers on pop-up window"
+msgstr ""
+
+#: settings/class.WVSettings.php:259
+msgid "Comment Author Rating and Badge"
+msgstr ""
+
+#: settings/class.WVSettings.php:266
+msgid "Likers quick pop-up background color"
+msgstr ""
+
+#: settings/class.WVSettings.php:273
+msgid "Likers quick pop-up border color"
+msgstr ""
+
+#: settings/class.WVSettings.php:294 settings/settings.php:290
+msgid "Recount user votes"
+msgstr ""
+
+#: settings/settings.php:101 settings/settings.php:128
+#: settings/settings.php:155 settings/settings.php:182
+#: settings/settings.php:209
+msgid "Total count of votes"
+msgstr ""
+
+#: settings/settings.php:107 settings/settings.php:114
+#: settings/settings.php:134 settings/settings.php:141
+#: settings/settings.php:161 settings/settings.php:168
+#: settings/settings.php:188 settings/settings.php:195
+#: settings/settings.php:215 settings/settings.php:222
+msgid "Enable"
+msgstr ""
+
+#: settings/settings.php:117 settings/settings.php:144
+#: settings/settings.php:171 settings/settings.php:198
+#: settings/settings.php:225
+msgid "Example: #00FF00"
+msgstr ""
+
+#: settings/settings.php:127 settings/settings.php:154
+#: settings/settings.php:181 settings/settings.php:208
+msgid "Total Votes"
+msgstr ""
+
+#: settings/settings.php:131 settings/settings.php:158
+#: settings/settings.php:185 settings/settings.php:212
+msgid "Badge Icon"
+msgstr ""
+
+#: settings/settings.php:138 settings/settings.php:165
+#: settings/settings.php:192 settings/settings.php:219
+msgid "Custom Label"
+msgstr ""
+
+#: settings/settings.php:233
+msgid "Background and Colors"
+msgstr ""
+
+#: settings/settings.php:258
+msgid "Front-end Phrases"
+msgstr ""
+
+#: settings/settings.php:289
+msgid "Start Count"
+msgstr ""
+
+#. Name of the plugin
+msgid "wpDiscuz - Advanced Liking"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"See comment likers and voters of each comment. Adds user reputation and "
+"badges based on received likes."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://gvectors.com/product/wpdiscuz-advanced-liking/"
+msgstr ""
+
+#. Author of the plugin
+msgid "gVectors Team (A. Chakhoyan, G. Zakaryan, H. Martirosyan)"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://gvectors.com/"
+msgstr ""

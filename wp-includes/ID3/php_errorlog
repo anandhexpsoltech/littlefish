@@ -1,0 +1,2 @@
+[06-Feb-2020 06:43:07 CST6CDT] PHP Fatal error:  Class 'getid3_handler' not found in /home/littl280/public_html/wp-includes/ID3/module.audio.ac3.php on line 18
+[17-Feb-2020 22:22:07 CST6CDT] PHP Fatal error:  Class 'getid3_handler' not found in /home/littl280/public_html/wp-includes/ID3/module.audio.ac3.php on line 18

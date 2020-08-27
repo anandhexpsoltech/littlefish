@@ -1,0 +1,114 @@
+body.login #login {
+    width: 100%;
+	max-width: 320px;
+    padding: 80px 0 0;
+}
+
+body.login form {
+    margin-top: 0;
+	box-shadow: 0 2px 3px rgba(0,0,0,.13);
+	padding: 26px 24px 20px;
+}
+
+body.login h1 {
+    background: none;
+    background-size: cover;
+    width: 50px;
+    position: absolute;
+    left: 10%;
+    top: 30px;
+}
+
+body.login h1 a {
+    background: none;
+    width: 100%;
+    height: auto;
+    text-indent: 0;
+    margin: 0;
+}
+
+body.login h1 a img {
+    width: 100%;
+}
+
+body.login .button.button-large {
+    background: #222222;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    padding: 18px 20px;
+    margin: 0;
+    transition: all 0.1s ease-in-out;
+    max-width: 220px;
+    height: auto;
+    border-radius: 0px;
+    text-shadow: none;
+    display: block;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    text-transform: uppercase;
+}
+
+body.login .button.button-large:hover {
+	background-color: #82b9c0;
+	color: #fff;
+	border: none;
+}
+
+body.login .login-message {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 12px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    margin: 0 0 20px;
+    border-left: 4px solid #000;
+}
+
+body.login #nav {
+	display: none;
+}
+
+body.login form .input,
+body.login input[type="text"] {
+	box-shadow: none;
+	border: 1px solid #e0e0e0;
+	padding: 9px 10px 10px;
+    line-height: 1;
+}
+
+body.login #backtoblog {
+    text-align: center;
+}
+
+body.login #login_error,
+body.login .message, .login .success {
+    border-left: 4px solid #82b9c0;
+    margin: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    body.login #login {
+        padding: 30px 0 0;
+    }
+
+    body.login h1 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 0 28px;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2),only screen and (min-device-width : 320px) and (max-device-width : 480px) and (-webkit-min-device-pixel-ratio: 2),only screen and (min-device-width : 320px) and (max-device-width : 568px) and (-webkit-min-device-pixel-ratio: 2),only screen and (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio: 2),only screen and (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio: 2) {
+    body.login h1 {
+        width: 100px;
+		height: 64px;
+		zoom: 0.5;
+	    -moz-transform: scale(0.5);
+        margin: 0 0 50px;
+    }
+}

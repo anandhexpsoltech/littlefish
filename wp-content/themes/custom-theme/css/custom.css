@@ -1,0 +1,70 @@
+.margin-topm{margin-top: 2%;}
+
+#com-sub {float: right;}
+
+#mineiscuz-search-formc{margin-top: 2px;}
+
+#mineiscuz-search-formc .mineiscuz-search-boxc { background-color: #FFFFFF; border: 1px solid #CDCDCD; width: auto; float: left;}
+
+#mineiscuz-search-formc input[type="text"].mineiscuz-comm-searchc { width: auto; height: inherit; padding: 6px 10px; text-align: left; border: none !important; outline: 0 !important; background: 0 0 !important; font-size: 14px !important; box-shadow: none !important; vertical-align: top; margin-bottom: 0;}
+
+.ser-full{float: left; width:100%; margin-top: 2%;}
+
+.ser-full-l{float: left; width:80%;}
+
+.ser-full-l{float: left; width:20%;}
+
+.comnmine-header{float: left; width:100%; margin-bottom: 1%;}
+
+.comnmine-text{float: left; width:100%;}
+
+.comnmine-last-edited{float: left; width:100%;}
+
+.comnmine-footer{float: left; width:100%;}
+
+.comnmine-text p{margin-bottom: 1%;}
+
+.comnmine-author {float: left; width: auto; color: #4f5360; font-size: 15px; font-weight: 600; text-decoration: none; letter-spacing: 0.7px; margin-right: 5px;}
+
+.comnmine-date { float: right; color: #999999; font-size: 14px;}
+
+.comnmine-thread{float: left; width: 100%; border: 1px solid #ddd; margin: 0% 0% 2% 0%; padding: 2%; border-radius: 4px;}
+.comment-left {float: left;	width: 100%; margin-top: 4%;}
+.comnmine-author:hover .comnmine-status { display: block; border: 1px solid #00b38f; color: #00b38f; display: inline-block; font-size: 9px; border-radius: 1px; letter-spacing: 1px; line-height: 16px; padding: 0 6px; text-transform: uppercase; vertical-align: bottom; margin-bottom: 0; margin-left: 5px;}
+.comnmine-author:hover .comnmine-status-offline { display: block; border: 1px solid #b30000; color: #b30000; display: inline-block; font-size: 9px; border-radius: 1px; letter-spacing: 1px; line-height: 16px; padding: 0 6px; text-transform: uppercase; vertical-align: bottom; margin-bottom: 0; margin-left: 5px;}
+.comnmine-tools i { color: #aaaaaa; font-size: 14px; cursor: pointer; vertical-align: bottom;}
+.comnmine-tools { float: left; width: 100%; text-align: right;
+}
+.comnmine-status {display: none;}
+.comnmine-status-offline {display: none;}
+.comnmine-last-edited{margin: 10px 0 20px 0;font-size: 12px;color: #999;font-style: italic;}
+
+#comnminethread .comnmine-footer { position: relative;}
+
+#comnminethread .comnmine-footer { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; padding-top: 0;}
+
+#comnminethread .comnmine-vote { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: center; padding-right: 20px; font-size: 0;}
+
+.comnmine-vote-up.comnmine-not-clicked { width: 34px; height: 28px; opacity: 1; cursor: pointer; padding: 4px 8px; border: 1px solid #e5e5e5; border-right-color: rgb(229, 229, 229); border-right-style: solid; border-right-width: 1px; border-right: 0;}
+
+.comnmine-vote-result { color: #888; font-size: 12px; border: 1px solid #e5e5e5; padding: 4px 12px 2px; cursor: pointer;}
+
+.comnmine-reply-button { cursor: pointer; font-size: 14px; color: #999999; white-space: nowrap;}
+
+.comnmine-reply-button svg { vertical-align: middle; transform: rotate(180deg); width: 22px; height: 22px; opacity: 0.7; fill: #999999; margin-right: 2px;}
+.page-template-template-comment .footer {float: left; width: 100%;}
+
+#comnmineuser svg {fill: #888888; cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+.margin-topm{margin-bottom: 12%;}	 
+}
