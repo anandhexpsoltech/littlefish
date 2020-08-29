@@ -1261,7 +1261,7 @@
         },
         {
             "key": "field_is_config_net_roe",
-            "label": "Config Net ROE",
+            "label": "Net ROE % Calc for Total Costs",
             "name": "config_net_roe",
             "type": "text",
             "instructions": "",

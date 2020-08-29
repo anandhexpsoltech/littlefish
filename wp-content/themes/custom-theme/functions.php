@@ -924,7 +924,8 @@ function custom_redirect($content) {
 
     if(($post->post_type == 'client' && !is_user_logged_in())
         || is_page_template('template-overview.php') && !is_user_logged_in()
-        || is_page_template('template-xero.php') && !is_user_logged_in()) {
+        || is_page_template('template-xero.php') && !is_user_logged_in()
+        || is_page_template('template-xero-callback.php') && !is_user_logged_in()) {
         wp_redirect( get_home_url() . '/login/' );
         exit;
     }
@@ -1782,7 +1783,7 @@ function xero_callback() {
     $result = $wpdb->get_results("SELECT `AccessToken` FROM `xero_settings` WHERE `UserName` = 'Admin' ", ARRAY_A);
     $AccessToken = $result[0]['AccessToken'];
     $auth = 'Basic '.$AccessToken;
-    $concat = "9167A7539B0A453CAA2B34D8F3745C31:gAMQvbbxP-GaTQ_5MyF5gAYSq_og3UUBH61jOAC1kAHh_1p8";
+    $concat = "A82E0078BDD74B3190444557A2564F99:0EH7H5MxFZorFPEF-v1MluEWEck5-31_AiT8aCOIjUi3fgA7";
     $response = wp_remote_post( $url, array(
             'method' => 'POST',
             'timeout' => 45,
@@ -1796,7 +1797,7 @@ function xero_callback() {
             'body' => array(
                     'grant_type' => 'authorization_code',
                     'code' => $code,
-                    'redirect_uri' => 'http://localhost/littlefish/xero-callback',
+                    'redirect_uri' => get_home_url().'/xero-callback',
             )
         )
     );
@@ -1829,7 +1830,7 @@ function xero_callback() {
     die;
 }
 
-function xero_disconnect(){
+function xero_disconnect_one(){
     global $wpdb;
     $del_res = $wpdb->get_results("DELETE FROM `xero_token` ", ARRAY_A);
     echo 'records_cleared';
@@ -1899,7 +1900,7 @@ function update_viewed_comment() {
 
 add_action( 'wpb_custom_cron', 'xero_cron_call');
 
-function xero_cron_call(){
+function xero_disconnect(){
     global $wpdb;
     $result = $wpdb->get_results("SELECT `AccessToken` FROM `xero_settings` WHERE `UserName` = 'Admin' ", ARRAY_A);
     $AccessToken = $result[0]['AccessToken'];
@@ -1925,7 +1926,9 @@ function xero_cron_call(){
         echo 'Bank Statements Success';
     }
 
-    $check_url = "http://localhost:9095/api/Check";
+    $Tenant_res = $wpdb->get_results("SELECT `tenantId` FROM `xero_tenants` LIMIT 1", ARRAY_A);
+    $Tenant_val = $Tenant_res[0]['tenantId'];
+    $check_url = "http://localhost:9095/api/Check?TenantId=".trim($Tenant_val);
     $check_res = wp_remote_post($check_url, array(
             'method' => 'GET',
             'timeout' => 45,
@@ -1965,13 +1968,16 @@ function xero_cron_call(){
         echo "Something went wrong: $get_accounts_res_error_message";
     }else {
 //       echo json_encode($get_accounts_res['body']);
-        echo 'Check Success';
+        echo 'Account Success';
     }
     die;
 }
 
-function wpb_custom_cron_func() {
-    wp_mail( 'anandhsp21@yopmail.com', 'Automatic email', 'Automatic scheduled email from WordPress to test cron');
+
+add_action( 'wpb_custom_cron_func', 'xero_cron_call_check');
+
+function xero_cron_call_check() {
+    //wp_mail( 'anandhsp21@yopmail.com', 'Automatic email', 'Automatic scheduled email from WordPress to test cron');
 }
 
 /*31-07-2020-end*/

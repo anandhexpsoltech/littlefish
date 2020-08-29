@@ -11,10 +11,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-        <meta name="xero-client-id" content="9167A7539B0A453CAA2B34D8F3745C31">
+        <meta name="xero-client-id" content="A82E0078BDD74B3190444557A2564F99">
         <meta name="xero-scopes" content="openid profile email files accounting.transactions accounting.transactions.read accounting.reports.read accounting.journals.read accounting.settings accounting.settings.read accounting.contacts accounting.contacts.read accounting.attachments accounting.attachments.read offline_access">
-        <meta name="xero-redirect-uri" content="http://localhost/littlefish/xero-callback">
-
+        <meta name="xero-redirect-uri" content="<?php echo get_home_url(); ?>/xero-callback">
 		<?php wp_head(); ?>
 	</head>
 

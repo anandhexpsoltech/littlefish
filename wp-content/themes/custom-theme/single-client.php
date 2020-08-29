@@ -1747,11 +1747,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
 // echo "<pre>"; print_r(get_current_user_id());
 $current_user_id = get_current_user_id();
 ?>
-<style>
-    .error_high {
-        color: red;
-    }
-</style>
 <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('editor');
@@ -1836,6 +1831,6 @@ $current_user_id = get_current_user_id();
         });
     });
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
 <?php get_footer(); ?>
 
