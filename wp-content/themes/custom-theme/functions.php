@@ -1830,7 +1830,7 @@ function xero_callback() {
     die;
 }
 
-function xero_disconnect_one(){
+function xero_disconnect(){
     global $wpdb;
     $del_res = $wpdb->get_results("DELETE FROM `xero_token` ", ARRAY_A);
     echo 'records_cleared';
@@ -1900,7 +1900,7 @@ function update_viewed_comment() {
 
 add_action( 'wpb_custom_cron', 'xero_cron_call');
 
-function xero_disconnect(){
+function xero_cron_call(){
     global $wpdb;
     $result = $wpdb->get_results("SELECT `AccessToken` FROM `xero_settings` WHERE `UserName` = 'Admin' ", ARRAY_A);
     $AccessToken = $result[0]['AccessToken'];
@@ -1971,13 +1971,6 @@ function xero_disconnect(){
         echo 'Account Success';
     }
     die;
-}
-
-
-add_action( 'wpb_custom_cron_func', 'xero_cron_call_check');
-
-function xero_cron_call_check() {
-    //wp_mail( 'anandhsp21@yopmail.com', 'Automatic email', 'Automatic scheduled email from WordPress to test cron');
 }
 
 /*31-07-2020-end*/
