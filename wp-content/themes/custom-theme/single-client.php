@@ -944,7 +944,7 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                         <?php echo $total_amount ? '$' . $total_amount : '$ 0'; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $gst ? '$' . $gst : '$ 0'; ?>
+                                                        <?php // echo $gst ? '$' . $gst : '$ 0'; ?>
                                                     </td>
                                                     <td>
                                                     </td>

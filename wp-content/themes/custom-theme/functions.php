@@ -1832,7 +1832,13 @@ function xero_callback() {
 
 function xero_disconnect(){
     global $wpdb;
-    $del_res = $wpdb->get_results("DELETE FROM `xero_token` ", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_accounts`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_bank_feed`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_contact`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_expense`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_expense_item_tracking`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_expense_lineitem`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_token`;", ARRAY_A);
     echo 'records_cleared';
     die;
 }
