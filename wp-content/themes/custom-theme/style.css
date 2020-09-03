@@ -150,7 +150,7 @@ body.fullwidth .wrapper {
 }
 .pro_spend {
 	float: right;
-	padding-right: 16px;
+	padding-right: 25px;
 }
 
 .list_top_section, .list_bm_section{
@@ -405,6 +405,10 @@ body.fullwidth .wrapper {
 	float: right;
 	width: auto;
 	line-height: 21px;
+}
+
+.table tr td {
+	padding-right: 0 !important;
 }
 
 

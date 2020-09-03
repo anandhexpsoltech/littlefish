@@ -144,8 +144,9 @@ SELECT sum(lineitem.LineAmount) as total_amount,
 accounts.Name FROM xero_expense_item_tracking AS item_tracking 
 LEFT JOIN xero_expense_lineitem as lineitem ON lineitem.LineItemID = item_tracking.LineItemID 
 LEFT JOIN xero_accounts as accounts ON accounts.code = lineitem.AccountCode 
-WHERE item_tracking.Option= '" . $current_title . "' GROUP BY accounts.Name) 
-AS Temp 
+LEFT JOIN xero_expense as expense ON expense.BankTransactionID = lineitem.BankTransactionID 
+WHERE item_tracking.Option= '" . $current_title . "' AND expense.Type ='SPEND'  GROUP BY accounts.Name) 
+AS temp 
 LEFT JOIN xero_score_config as config ON config.name = temp.Name 
 LEFT JOIN xero_score_config as score ON score.id = config.parent_id 
 GROUP BY score.name";
