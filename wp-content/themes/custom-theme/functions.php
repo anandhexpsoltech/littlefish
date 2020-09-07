@@ -702,6 +702,33 @@ function create_post_type_html5()
         ),
         'can_export' => true
     ));
+
+    register_post_type('funds',
+        array(
+        'labels' => array(
+            'name' => __('Funds', 'html5blank'),
+            'singular_name' => __('Fund', 'html5blank'),
+            'add_new' => __('Add New', 'html5blank'),
+            'add_new_item' => __('Add New Fund', 'html5blank'),
+            'edit' => __('Edit', 'html5blank'),
+            'edit_item' => __('Edit Fund', 'html5blank'),
+            'new_item' => __('New Fund', 'html5blank'),
+            'view' => __('View Funds', 'html5blank'),
+            'view_item' => __('View Fund', 'html5blank'),
+            'search_items' => __('Search Funds', 'html5blank'),
+            'not_found' => __('No Funds found', 'html5blank'),
+            'not_found_in_trash' => __('No Funds found in Trash', 'html5blank')
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'has_archive' => false,
+        'exclude_from_search' => true,
+        'publicly_queryable' => false,
+        'supports' => array(
+            'title'
+        ),
+        'can_export' => true
+    ));
 }
 
 add_action( 'init', 'create_project_taxonomies', 0 );
@@ -1503,15 +1530,17 @@ function include_myuploadscript() {
 
 add_action( 'admin_enqueue_scripts', 'include_myuploadscript' );
 
+//custom
 function filter_handler( $data , $postarr ) {
 
 	global $wpdb;
 	$new_data_arr_acf_files = $_POST['acf']['field_597f3a9afa683'];
 	$new_data_arr_acf_files_only = array();
-	foreach($new_data_arr_acf_files as $new_data_arr_acf_file){
-		$new_data_arr_acf_files_only[] = $new_data_arr_acf_file['field_597f3a9afa686'];
-	}
-
+	if($new_data_arr_acf_files){
+        foreach($new_data_arr_acf_files as $new_data_arr_acf_file){
+            $new_data_arr_acf_files_only[] = $new_data_arr_acf_file['field_597f3a9afa686'];
+        }
+    }
 	$old_data_arr_acf_files = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."postmeta` WHERE `post_id` = ".$postarr['ID']." AND `meta_key` LIKE 'legal_files_2_%_legal_file'  ORDER BY `meta_id` ASC");
 	$old_data_arr_acf_files_only = array();
 	$value_different_for_doc_uploaded_for = array();

@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="779520f0-cfa2-463f-9138-13e761e30fa3" name="Default Changelist" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,74 +34,81 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="template-overview.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="107" column="60" lean-forward="false" selection-start-line="107" selection-start-column="60" selection-end-line="107" selection-end-column="60" />
+            <state relative-caret-position="375">
+              <caret line="105" column="4" lean-forward="false" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
               <folding>
-                <element signature="e#1951#2022#0#HTML" expanded="true" />
-                <element signature="e#7060#7724#0#HTML" expanded="false" />
-                <element signature="e#7113#7137#0#HTML" expanded="true" />
-                <element signature="e#7196#7220#0#HTML" expanded="true" />
-                <element signature="e#7282#7316#0#HTML" expanded="true" />
-                <element signature="e#7380#7406#0#HTML" expanded="true" />
-                <element signature="e#7466#7492#0#HTML" expanded="true" />
-                <element signature="e#7553#7579#0#HTML" expanded="true" />
-                <element signature="e#7641#7666#0#HTML" expanded="true" />
-                <element signature="e#10292#10316#0#HTML" expanded="true" />
-                <element signature="e#10888#10912#0#HTML" expanded="true" />
-                <element signature="e#11027#11061#0#HTML" expanded="true" />
-                <element signature="e#11179#11204#0#HTML" expanded="true" />
-                <element signature="e#11732#11757#0#HTML" expanded="true" />
-                <element signature="e#12285#12310#0#HTML" expanded="true" />
-                <element signature="e#12790#12815#0#HTML" expanded="true" />
-                <element signature="e#12786#13273#0#HTML" expanded="false" />
-                <element signature="e#13836#14649#0#HTML" expanded="false" />
-                <element signature="e#16115#16327#0#HTML" expanded="false" />
-                <marker date="1599143110715" expanded="true" signature="427:1198" ph="SELECT item_... " />
-                <marker date="1599143110715" expanded="true" signature="1454:1864" ph="SELECT item_... xero_expense_lineitem" />
-                <marker date="1599143110715" expanded="true" signature="15103:15274" ph="{...}" />
+                <element signature="e#3997#4694#0#PHP" expanded="false" />
+                <marker date="1599225631208" expanded="true" signature="427:1198" ph="SELECT item_... " />
+                <marker date="1599225631208" expanded="true" signature="1459:2083" ph="SELECT item_... xero_expense_lineitem" />
+                <marker date="1599225631208" expanded="true" signature="15889:16357" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single-client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4682">
-              <caret line="1699" column="61" lean-forward="true" selection-start-line="1699" selection-start-column="61" selection-end-line="1699" selection-end-column="61" />
+            <state relative-caret-position="11679">
+              <caret line="689" column="64" lean-forward="false" selection-start-line="689" selection-start-column="64" selection-end-line="689" selection-end-column="64" />
               <folding>
-                <element signature="n#div#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <marker date="1599130215290" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599130215290" expanded="true" signature="1257:1792" ph="SELECT linei... " />
-                <marker date="1599130215290" expanded="true" signature="2949:3106" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599130215290" expanded="true" signature="3191:3255" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599130215290" expanded="true" signature="3338:3445" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599130215290" expanded="true" signature="4540:5254" ph="SELECT sum(t... sum" />
-                <marker date="1599130215290" expanded="true" signature="4607:5088" ph="SELECT sum(l... xero_expense_item_tracking" />
-                <marker date="1599130215290" expanded="true" signature="47408:47472" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599130215290" expanded="true" signature="49169:49304" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599130215290" expanded="true" signature="49854:50010" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599130215290" expanded="true" signature="51999:52063" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599130215290" expanded="true" signature="52236:52343" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599130215290" expanded="true" signature="57706:57818" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+                <element signature="e#28919#29750#0#PHP" expanded="false" />
+                <element signature="e#29762#30082#0#PHP" expanded="false" />
+                <element signature="e#35151#35443#0#PHP" expanded="false" />
+                <element signature="e#36323#36769#0#PHP" expanded="false" />
+                <element signature="e#38075#38467#0#PHP" expanded="false" />
+                <marker date="1599220639523" expanded="true" signature="44818:44967" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599220639523" expanded="true" signature="46572:46608" ph="..." />
+                <marker date="1599220639523" expanded="true" signature="47586:47622" ph="..." />
+                <marker date="1599220639523" expanded="true" signature="49088:49124" ph="..." />
+                <marker date="1599220639523" expanded="true" signature="50714:50825" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+                <marker date="1599220639523" expanded="true" signature="56587:56738" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599220639523" expanded="true" signature="57085:57151" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+                <marker date="1599220639523" expanded="true" signature="58110:58176" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+                <marker date="1599220639523" expanded="true" signature="65448:65516" ph="SELECT `Acce... xero_settings" />
+                <marker date="1599220639523" expanded="true" signature="67400:67427" ph="DELETE FROM `xero_accounts`... " />
+                <marker date="1599220639523" expanded="true" signature="67465:67493" ph="DELETE FROM `xero_bank_feed`... " />
+                <marker date="1599220639523" expanded="true" signature="67531:67557" ph="DELETE FROM `xero_contact`... " />
+                <marker date="1599220639523" expanded="true" signature="67595:67621" ph="DELETE FROM `xero_expense`... " />
+                <marker date="1599220639523" expanded="true" signature="67659:67699" ph="DELETE FROM `xero_expense_item_tracking`... " />
+                <marker date="1599220639523" expanded="true" signature="67737:67772" ph="DELETE FROM `xero_expense_lineitem`... " />
+                <marker date="1599220639523" expanded="true" signature="67810:67834" ph="DELETE FROM `xero_token`... " />
+                <marker date="1599220639523" expanded="true" signature="69962:70030" ph="SELECT `Acce... xero_settings" />
+                <marker date="1599220639523" expanded="true" signature="70842:70887" ph="SELECT `tena... xero_tenants" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+      <file leaf-file-name="loop-clients.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="81" column="52" lean-forward="false" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+              <folding>
+                <element signature="e#2247#2616#0#PHP" expanded="false" />
+                <element signature="e#2631#3013#0#PHP" expanded="false" />
+                <element signature="e#3028#3406#0#PHP" expanded="false" />
+                <element signature="e#3421#3783#0#PHP" expanded="false" />
+                <element signature="e#3798#4168#0#PHP" expanded="false" />
+                <element signature="e#4183#4541#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="group_5f521a087d742.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+              <folding>
+                <element signature="e#1040#1200#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,8 +127,18 @@
       <find>tabs tabs_default</find>
       <find>$details_res</find>
       <find>tool</find>
+      <find>Facebook profile URL</find>
+      <find>client_id</find>
+      <find>$current_custom_user</find>
+      <find>1509</find>
+      <find>field_597f3a9afa683</find>
+      <find>client</find>
+      <find>fund</find>
+      <find>group_5f521a087d742</find>
+      <find>testimonial</find>
     </findStrings>
     <dirStrings>
+      <dir>E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\acf-json</dir>
       <dir>E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme</dir>
     </dirStrings>
   </component>
@@ -132,6 +150,11 @@
       <list>
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5930250347d31.json" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" />
+        <option value="$PROJECT_DIR$/wp-config.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" />
       </list>
     </option>
@@ -165,8 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,14 +232,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\acf-json" />
       <recent name="E:\xampp\htdocs\littlefish" />
       <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme" />
       <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\img" />
-      <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\acf-json" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -254,34 +277,35 @@
       <workItem from="1598590150038" duration="18930000" />
       <workItem from="1598680618073" duration="3440000" />
       <workItem from="1599021044388" duration="9594000" />
-      <workItem from="1599109083287" duration="26972000" />
+      <workItem from="1599109083287" duration="28229000" />
+      <workItem from="1599195200640" duration="20199000" />
+      <workItem from="1599448831764" duration="1250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26972000" />
+    <option name="totallyTimeSpent" value="49678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.564296E-4" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -320,35 +344,101 @@
     <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598600664996" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3997#4694#0#PHP" expanded="false" />
+            <marker date="1599225631208" expanded="true" signature="427:1198" ph="SELECT item_... " />
+            <marker date="1599225631208" expanded="true" signature="1459:2083" ph="SELECT item_... xero_expense_lineitem" />
+            <marker date="1599225631208" expanded="true" signature="15889:16357" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="11713">
+          <caret line="689" column="64" lean-forward="true" selection-start-line="689" selection-start-column="64" selection-end-line="689" selection-end-column="64" />
+          <folding>
+            <element signature="e#28919#29750#0#PHP" expanded="false" />
+            <element signature="e#29762#30082#0#PHP" expanded="false" />
+            <element signature="e#35151#35443#0#PHP" expanded="false" />
+            <element signature="e#36323#36769#0#PHP" expanded="false" />
+            <element signature="e#38075#38467#0#PHP" expanded="false" />
+            <marker date="1599220639523" expanded="true" signature="44818:44967" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599220639523" expanded="true" signature="46572:46608" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="47586:47622" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="49088:49124" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="50714:50825" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599220639523" expanded="true" signature="56587:56738" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599220639523" expanded="true" signature="57085:57151" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599220639523" expanded="true" signature="58110:58176" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599220639523" expanded="true" signature="65448:65516" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599220639523" expanded="true" signature="67400:67427" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599220639523" expanded="true" signature="67465:67493" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599220639523" expanded="true" signature="67531:67557" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599220639523" expanded="true" signature="67595:67621" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599220639523" expanded="true" signature="67659:67699" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599220639523" expanded="true" signature="67737:67772" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599220639523" expanded="true" signature="67810:67834" ph="DELETE FROM `xero_token`... " />
+            <marker date="1599220639523" expanded="true" signature="69962:70030" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599220639523" expanded="true" signature="70842:70887" ph="SELECT `tena... xero_tenants" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="52" lean-forward="true" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+          <folding>
+            <element signature="e#2247#2616#0#PHP" expanded="false" />
+            <element signature="e#2631#3013#0#PHP" expanded="false" />
+            <element signature="e#3028#3406#0#PHP" expanded="false" />
+            <element signature="e#3421#3783#0#PHP" expanded="false" />
+            <element signature="e#3798#4168#0#PHP" expanded="false" />
+            <element signature="e#4183#4541#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#1040#1200#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3997#4694#0#PHP" expanded="false" />
+            <marker date="1599225631208" expanded="true" signature="427:1198" ph="SELECT item_... " />
+            <marker date="1599225631208" expanded="true" signature="1459:2083" ph="SELECT item_... xero_expense_lineitem" />
+            <marker date="1599225631208" expanded="true" signature="15889:16357" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4682">
-          <caret line="1699" column="61" lean-forward="true" selection-start-line="1699" selection-start-column="61" selection-end-line="1699" selection-end-column="61" />
+        <state relative-caret-position="28883">
+          <caret line="1699" column="61" lean-forward="false" selection-start-line="1699" selection-start-column="61" selection-end-line="1699" selection-end-column="61" />
           <folding>
-            <element signature="n#div#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#37155#44641#0#PHP" expanded="false" />
             <marker date="1599130215290" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
             <marker date="1599130215290" expanded="true" signature="1257:1792" ph="SELECT linei... " />
             <marker date="1599130215290" expanded="true" signature="2949:3106" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
@@ -356,43 +446,247 @@
             <marker date="1599130215290" expanded="true" signature="3338:3445" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
             <marker date="1599130215290" expanded="true" signature="4540:5254" ph="SELECT sum(t... sum" />
             <marker date="1599130215290" expanded="true" signature="4607:5088" ph="SELECT sum(l... xero_expense_item_tracking" />
-            <marker date="1599130215290" expanded="true" signature="47408:47472" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599130215290" expanded="true" signature="49169:49304" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599130215290" expanded="true" signature="49854:50010" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599130215290" expanded="true" signature="51999:52063" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599130215290" expanded="true" signature="52236:52343" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599130215290" expanded="true" signature="57706:57818" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="151" column="17" lean-forward="false" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="151" column="17" lean-forward="false" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5614">
+          <caret line="1349" column="64" lean-forward="false" selection-start-line="1349" selection-start-column="64" selection-end-line="1349" selection-end-column="64" />
+          <folding>
+            <element signature="e#37155#44641#0#PHP" expanded="false" />
+            <marker date="1599130215290" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599130215290" expanded="true" signature="1257:1792" ph="SELECT linei... " />
+            <marker date="1599130215290" expanded="true" signature="2949:3106" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599130215290" expanded="true" signature="3191:3255" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599130215290" expanded="true" signature="3338:3445" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599130215290" expanded="true" signature="4540:5254" ph="SELECT sum(t... sum" />
+            <marker date="1599130215290" expanded="true" signature="4607:5088" ph="SELECT sum(l... xero_expense_item_tracking" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="83" column="34" lean-forward="true" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-whoweare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5ae305598c490.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5b054d714ffce.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5bd3051b78c13.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5c0ba4d193e4c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5cc17ea13f0fc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5dc0290374c60.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5dd53b05eaad5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_592eae2b45536.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59354190516ca.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5930250347d30.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="245" column="1" lean-forward="false" selection-start-line="245" selection-start-column="1" selection-end-line="245" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59318227e7d40.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_594555be43fd6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_593023f76ed20.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59317e587fc8c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59316e3d41ef0.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5937ca9008a7c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_592fd67686f98.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#1040#1200#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11679">
+          <caret line="689" column="64" lean-forward="false" selection-start-line="689" selection-start-column="64" selection-end-line="689" selection-end-column="64" />
+          <folding>
+            <element signature="e#28919#29750#0#PHP" expanded="false" />
+            <element signature="e#29762#30082#0#PHP" expanded="false" />
+            <element signature="e#35151#35443#0#PHP" expanded="false" />
+            <element signature="e#36323#36769#0#PHP" expanded="false" />
+            <element signature="e#38075#38467#0#PHP" expanded="false" />
+            <marker date="1599220639523" expanded="true" signature="44818:44967" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599220639523" expanded="true" signature="46572:46608" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="47586:47622" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="49088:49124" ph="..." />
+            <marker date="1599220639523" expanded="true" signature="50714:50825" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599220639523" expanded="true" signature="56587:56738" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599220639523" expanded="true" signature="57085:57151" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599220639523" expanded="true" signature="58110:58176" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599220639523" expanded="true" signature="65448:65516" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599220639523" expanded="true" signature="67400:67427" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599220639523" expanded="true" signature="67465:67493" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599220639523" expanded="true" signature="67531:67557" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599220639523" expanded="true" signature="67595:67621" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599220639523" expanded="true" signature="67659:67699" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599220639523" expanded="true" signature="67737:67772" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599220639523" expanded="true" signature="67810:67834" ph="DELETE FROM `xero_token`... " />
+            <marker date="1599220639523" expanded="true" signature="69962:70030" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599220639523" expanded="true" signature="70842:70887" ph="SELECT `tena... xero_tenants" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="81" column="52" lean-forward="false" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+          <folding>
+            <element signature="e#2247#2616#0#PHP" expanded="false" />
+            <element signature="e#2631#3013#0#PHP" expanded="false" />
+            <element signature="e#3028#3406#0#PHP" expanded="false" />
+            <element signature="e#3421#3783#0#PHP" expanded="false" />
+            <element signature="e#3798#4168#0#PHP" expanded="false" />
+            <element signature="e#4183#4541#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="107" column="60" lean-forward="false" selection-start-line="107" selection-start-column="60" selection-end-line="107" selection-end-column="60" />
+        <state relative-caret-position="375">
+          <caret line="105" column="4" lean-forward="false" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="4" />
           <folding>
-            <element signature="e#1951#2022#0#HTML" expanded="true" />
-            <element signature="e#7060#7724#0#HTML" expanded="false" />
-            <element signature="e#7113#7137#0#HTML" expanded="true" />
-            <element signature="e#7196#7220#0#HTML" expanded="true" />
-            <element signature="e#7282#7316#0#HTML" expanded="true" />
-            <element signature="e#7380#7406#0#HTML" expanded="true" />
-            <element signature="e#7466#7492#0#HTML" expanded="true" />
-            <element signature="e#7553#7579#0#HTML" expanded="true" />
-            <element signature="e#7641#7666#0#HTML" expanded="true" />
-            <element signature="e#10292#10316#0#HTML" expanded="true" />
-            <element signature="e#10888#10912#0#HTML" expanded="true" />
-            <element signature="e#11027#11061#0#HTML" expanded="true" />
-            <element signature="e#11179#11204#0#HTML" expanded="true" />
-            <element signature="e#11732#11757#0#HTML" expanded="true" />
-            <element signature="e#12285#12310#0#HTML" expanded="true" />
-            <element signature="e#12790#12815#0#HTML" expanded="true" />
-            <element signature="e#12786#13273#0#HTML" expanded="false" />
-            <element signature="e#13836#14649#0#HTML" expanded="false" />
-            <element signature="e#16115#16327#0#HTML" expanded="false" />
-            <marker date="1599143110715" expanded="true" signature="427:1198" ph="SELECT item_... " />
-            <marker date="1599143110715" expanded="true" signature="1454:1864" ph="SELECT item_... xero_expense_lineitem" />
-            <marker date="1599143110715" expanded="true" signature="15103:15274" ph="{...}" />
+            <element signature="e#3997#4694#0#PHP" expanded="false" />
+            <marker date="1599225631208" expanded="true" signature="427:1198" ph="SELECT item_... " />
+            <marker date="1599225631208" expanded="true" signature="1459:2083" ph="SELECT item_... xero_expense_lineitem" />
+            <marker date="1599225631208" expanded="true" signature="15889:16357" ph="{...}" />
           </folding>
         </state>
       </provider>
