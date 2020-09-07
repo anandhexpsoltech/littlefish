@@ -706,7 +706,7 @@ function create_post_type_html5()
     register_post_type('funds',
         array(
         'labels' => array(
-            'name' => __('Funds', 'html5blank'),
+            'name' => __('Fund Lists', 'html5blank'),
             'singular_name' => __('Fund', 'html5blank'),
             'add_new' => __('Add New', 'html5blank'),
             'add_new_item' => __('Add New Fund', 'html5blank'),
@@ -2004,6 +2004,27 @@ function xero_cron_call(){
     }else {
 //       echo json_encode($get_accounts_res['body']);
         echo 'Account Success';
+    }
+
+    $track_cat = "http://localhost:9095/api/TrackingCategory";
+    $track_cat_res = wp_remote_post($track_cat, array(
+            'method' => 'GET',
+            'timeout' => 45,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'blocking' => true,
+            'headers' => array(
+                'Authorization' => $auth
+            ),
+            'body' => ''
+        )
+    );
+    if (is_wp_error($track_cat_res)) {
+        $track_cat_res_error_message = $track_cat_res->get_error_message();
+        echo "Something went wrong: $track_cat_res_error_message";
+    }else {
+//       echo json_encode($get_accounts_res['body']);
+        echo 'Tracking Category Success';
     }
     die;
 }

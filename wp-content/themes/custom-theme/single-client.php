@@ -40,20 +40,23 @@ $tf = 0;
 $current_title = esc_html(get_the_title());
 
 $sql = "SELECT 
-lineitem.ItemCode,
+accounts.Name as ItemCode,
 lineitem.Description, 
 lineitem.LineAmount, 
 lineitem.TaxAmount,
 exp.Date,
 con.name,
+exp.Type,
 month(exp.Date) as date_month,
 year(exp.Date) as date_year
 FROM xero_expense_lineitem AS lineitem
 LEFT JOIN xero_expense_item_tracking as item_track ON lineitem.LineItemID = item_track.LineItemID  
 LEFT JOIN xero_expense as exp ON lineitem.BankTransactionID = exp.BankTransactionID  
-LEFT JOIN xero_contact as con ON con.ContactID = exp.ContactID   
-WHERE item_track.Option = '" . $current_title . "'
-order by exp.Date desc";
+LEFT JOIN xero_contact as con ON con.ContactID = exp.ContactID
+LEFT JOIN xero_accounts as accounts ON accounts.Code = lineitem.AccountCode
+LEFT JOIN xero_tracking_category_options as category_options ON category_options.TrackingOptionID = item_track.TrackingOptionID
+WHERE category_options.Name = '" . $current_title . "'
+order by exp.Date ASC";
 $money_query = $wpdb->get_results($sql);
 
 $templateData = array();
@@ -144,15 +147,15 @@ SELECT sum(lineitem.LineAmount) as total_amount,
 accounts.Name FROM xero_expense_item_tracking AS item_tracking 
 LEFT JOIN xero_expense_lineitem as lineitem ON lineitem.LineItemID = item_tracking.LineItemID 
 LEFT JOIN xero_accounts as accounts ON accounts.code = lineitem.AccountCode 
-LEFT JOIN xero_expense as expense ON expense.BankTransactionID = lineitem.BankTransactionID 
-WHERE item_tracking.Option= '" . $current_title . "' AND expense.Type ='SPEND'  GROUP BY accounts.Name) 
+LEFT JOIN xero_expense as expense ON expense.BankTransactionID = lineitem.BankTransactionID
+LEFT JOIN xero_tracking_category_options as category_options ON category_options.TrackingOptionID = item_tracking.TrackingOptionID
+WHERE category_options.Name= '" . $current_title . "' AND expense.Type ='SPEND'  GROUP BY accounts.Name) 
 AS temp 
 LEFT JOIN xero_score_config as config ON config.name = temp.Name 
 LEFT JOIN xero_score_config as score ON score.id = config.parent_id 
 GROUP BY score.name";
 $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
 ?>
-
 
 <!-- Code to add color classes if any file required action [END] -->
 
@@ -876,12 +879,12 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                             <table class="table table-condensed">
                                                 <thead>
                                                 <tr>
-                                                    <th>Expense</th>
-                                                    <th>Amount</th>
-                                                    <th>GST</th>
-                                                    <th>Date</th>
-                                                    <th>Paid to</th>
-                                                    <th>Notes</th>
+                                                    <th style="width:15%;">Expense</th>
+                                                    <th style="width:10%;">Amount</th>
+                                                    <th style="width:10%;">GST</th>
+                                                    <th style="width:10%;">Date</th>
+                                                    <th style="width:12%;">Paid to</th>
+                                                    <th style="width:50%;">Notes</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -911,21 +914,32 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                         <tbody>
                                                                         <?php
                                                                         foreach ($listDatas as $listData) {
-                                                                            $total_amount += $listData->LineAmount;
+                                                                            if($listData->Type == 'RECEIVE'){
+                                                                                $total_amount -= $listData->LineAmount;
+                                                                            }else{
+                                                                                $total_amount += $listData->LineAmount;
+                                                                            }
                                                                             $gst += $listData->TaxAmount;
                                                                             ?>
                                                                             <tr>
-                                                                                <td><?php echo $listData->ItemCode ? $listData->ItemCode : $listData->Description; ?></td>
-                                                                                <td><?php echo $listData->LineAmount ? '$' . number_format($listData->LineAmount, 2, '.', ',') : '$ 0'; ?> </td>
-                                                                                <td><?php echo $listData->TaxAmount ? '$' . number_format($listData->TaxAmount, 2, '.', ',') : '$ 0'; ?> </td>
-                                                                                <td>
+                                                                                <?php
+                                                                                if($listData->Type == 'RECEIVE'){
+                                                                                    $value = '('.number_format($listData->LineAmount, 2, '.', ',').')';
+                                                                                }else{
+                                                                                    $value = number_format($listData->LineAmount, 2, '.', ',');
+                                                                                }
+                                                                                ?>
+                                                                                <td style="width:15%;"><?php echo $listData->ItemCode ? $listData->ItemCode : $listData->Description; ?></td>
+                                                                                <td style="width:10%;"><?php echo $value ? '$ ' . $value : '$ 0.00'; ?> </td>
+                                                                                <td style="width:10%;"><?php echo $listData->TaxAmount ? '$ ' . number_format($listData->TaxAmount, 2, '.', ',') : '$ 0.00'; ?> </td>
+                                                                                <td style="width:10%;">
                                                                                     <?php
                                                                                     $date = date_create($listData->Date);
                                                                                     echo date_format($date, "d.m.Y") ? date_format($date, "d.m.Y") : '';
                                                                                     ?>
                                                                                 </td>
-                                                                                <td><?php echo $listData->name ? $listData->name : ''; ?></td>
-                                                                                <td><?php echo $listData->Description ? $listData->Description : ''; ?></td>
+                                                                                <td style="width:12%;"><?php echo $listData->name ? $listData->name : ''; ?></td>
+                                                                                <td style="width:50%;"><?php echo $listData->Description ? $listData->Description : ''; ?></td>
                                                                             </tr>
                                                                             <?php ?>
                                                                         <?php }
@@ -938,21 +952,18 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                     <?php }
                                                 } ?>
                                                 <tr class="amount_cal">
-                                                    <td>
+                                                    <td style="width:15%;">
                                                         Total costs
                                                     </td>
-                                                    <td>
-                                                        <?php echo $total_amount ? '$' . $total_amount : '$ 0'; ?>
+                                                    <td style="width:10%;">
+                                                        <?php echo $total_amount ? '$ ' . number_format($total_amount, 2, '.', ',') : '$ 0.00'; ?>
                                                     </td>
-                                                    <td>
+                                                    <td style="width:10%;">
                                                         <?php // echo $gst ? '$' . $gst : '$ 0'; ?>
                                                     </td>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                    </td>
+                                                    <td style="width:10%;"></td>
+                                                    <td style="width:12%;"></td>
+                                                    <td style="width:50%;"></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -1366,80 +1377,80 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
                                                                 $purchase_cost = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['purchase_cost'] = $loop_data['final_amount'];
-                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0';
+                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs')) {
-                                                                $_SESSION['datas']['purchase_cost'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['purchase_cost'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
                                                                 $tp_demo = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['tp_demo'] = $loop_data['final_amount'];
-                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0';
+                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo')) {
-                                                                $_SESSION['datas']['tp_demo'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['tp_demo'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
                                                                 $pm_fee = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['pm_fee'] = $loop_data['final_amount'];
-                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0';
+                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee')) {
-                                                                $_SESSION['datas']['pm_fee'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['pm_fee'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
                                                                 $total_build = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['total_build'] = $loop_data['final_amount'];
-                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0';
+                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build')) {
-                                                                $_SESSION['datas']['total_build'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['total_build'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
                                                                 $total_holding = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['total_holding'] = $loop_data['final_amount'];
-                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0';
+                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding')) {
-                                                                $_SESSION['datas']['total_holding'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['total_holding'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
                                                                 $open_space = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['open_space'] = $loop_data['final_amount'];
-                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0';
+                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space')) {
-                                                                $_SESSION['datas']['open_space'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['open_space'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
                                                                 $gst = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['gst'] = $loop_data['final_amount'];
-                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0';
+                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'GST')) {
-                                                                $_SESSION['datas']['gst'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['gst'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                             if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
                                                                 && trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
                                                                 $total_sales = $loop_data['final_amount'];
                                                                 $_SESSION['datas']['total_sales'] = $loop_data['final_amount'];
-                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0';
+                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0.00';
                                                             } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales')) {
-                                                                $_SESSION['datas']['total_sales'] = '0';
-                                                                echo '$ 0';
+                                                                $_SESSION['datas']['total_sales'] = '0.00';
+                                                                echo '$ 0.00';
                                                             }
 
                                                         }
@@ -1447,42 +1458,42 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
                                                                 $purchase_cost = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['purchase_cost'] = $purchase_cost;
-                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0';
+                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
                                                                 $tp_demo = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['tp_demo'] = $tp_demo;
-                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0';
+                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
                                                                 $pm_fee = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['pm_fee'] = $pm_fee;
-                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0';
+                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
                                                                 $total_build = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['total_build'] = $total_build;
-                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0';
+                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
                                                                 $total_holding = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['total_holding'] = $total_holding;
-                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0';
+                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
                                                                 $open_space = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['open_space'] = $open_space;
-                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0';
+                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
                                                                 $gst = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['gst'] = $gst;
-                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0';
+                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0.00';
                                                             }
                                                             if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
                                                                 $total_sales = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
                                                                 $_SESSION['datas']['total_sales'] = $total_sales;
-                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0';
+                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0.00';
                                                             }
                                                         }
 
@@ -1492,7 +1503,7 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                 $values = $_SESSION['datas'];
                                                                 $total_cost = $values['purchase_cost'] + $values['tp_demo'] + $values['pm_fee'] + $values['total_build'] + $values['total_holding'] + $values['open_space'] + $values['gst'];
                                                                 $_SESSION['datas']['total_costs'] = $total_cost;
-                                                                echo $total_cost ? '$ ' . number_format($total_cost, 2, '.', ',') : '$ 0';
+                                                                echo $total_cost ? '$ ' . number_format($total_cost, 2, '.', ',') : '$ 0.00';
                                                             }
                                                         }
                                                         else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs' && trim(get_sub_field('field_is_manual')) == 'true') {
@@ -1505,9 +1516,9 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                 if (isset($values['total_sales']) && isset($values['total_costs'])) {
                                                                     $net_profit = $values['total_sales'] - $values['total_costs'];
                                                                     $_SESSION['datas']['net_profit'] = $net_profit;
-                                                                    echo $net_profit ? '$ ' . number_format($net_profit, 2, '.', ',') : '$ 0';
+                                                                    echo $net_profit ? '$ ' . number_format($net_profit, 2, '.', ',') : '$ 0.00';
                                                                 } else {
-                                                                    echo '$ 0';
+                                                                    echo '$ 0.00';
                                                                 }
                                                             }
                                                         }
@@ -1520,9 +1531,9 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                 $values = $_SESSION['datas'];
                                                                 if (isset($values['net_profit']) && isset($values['total_costs'])) {
                                                                     $net_pro_roi = $values['net_profit'] / $values['total_costs'];
-                                                                    echo $net_pro_roi ? '$ ' . number_format($net_pro_roi, 2, '.', ',') : '$ 0';
+                                                                    echo $net_pro_roi ? '$ ' . number_format($net_pro_roi, 2, '.', ',') : '$ 0.00';
                                                                 } else {
-                                                                    echo '$ 0';
+                                                                    echo '$ 0.00';
                                                                 }
                                                             }
                                                         }
@@ -1541,7 +1552,7 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                     $net_roe_val = bcdiv($net_roe, 1, 2);
                                                                     echo '$ ' . $net_roe_val;
                                                                 } else {
-                                                                    echo '$ 0';
+                                                                    echo '$ 0.00';
                                                                 }
                                                             }
                                                         } else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE' && trim(get_sub_field('field_is_manual')) == 'true') {
@@ -1558,7 +1569,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
 
                                                     <div class="cell variation<?php if (get_sub_field('admin_scoreboard_comment')): ?> hover<?php endif; ?>"
                                                          style="color: <?php the_sub_field('admin_scoreboard_variation_color'); ?>">
-
                                                         <?php
                                                         if (trim(get_sub_field('field_is_manual')) == 'false') {
                                                             $budget = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
@@ -1704,7 +1714,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                         ?>
 
                                                         <?php if (get_sub_field('admin_scoreboard_comment')): ?>
-
                                                             <div class="tooltip">
                                                                 <span>
                                                                     <div class="content">
@@ -1712,7 +1721,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                     </div>
                                                                 </span>
                                                             </div>
-
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
