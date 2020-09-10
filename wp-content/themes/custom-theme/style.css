@@ -91,7 +91,7 @@ body.fullwidth .wrapper {
 }
 
 .dropdown-menu ul {
-	min-height: 100px;
+	/*min-height: 100px;*/
 	overflow: hidden;
 	overflow-y: scroll;
 	float: left;

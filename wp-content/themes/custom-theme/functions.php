@@ -53,26 +53,26 @@ add_filter('image_size_names_choose', 'custom_sizes');
 
 // Navigation
 function html5blank_nav() {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul class="animatedNo ">%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul class="animatedNo ">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 // Load Scripts (header.php)
@@ -82,13 +82,13 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1', true);
         //wp_enqueue_script('modernizr');
 
-		wp_register_script('meanmenu', get_template_directory_uri() . '/js/jquery.meanmenu.min.js', array('jquery'), '2.0.6', true);
-		//wp_enqueue_script('meanmenu');
+        wp_register_script('meanmenu', get_template_directory_uri() . '/js/jquery.meanmenu.min.js', array('jquery'), '2.0.6', true);
+        //wp_enqueue_script('meanmenu');
 
         wp_register_script('wow', get_template_directory_uri() . '/js/wow.min.js', array('jquery'), '1.1.3', true);
         wp_enqueue_script('wow');
 
-		wp_register_script('stickyheader', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery'), '1.0.0', true);
+        wp_register_script('stickyheader', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('stickyheader');
 
         wp_register_script('infinitescroll', get_template_directory_uri() . '/js/jquery.jscroll.js', array('jquery'), '1.0.0', true);
@@ -220,14 +220,14 @@ function html5blank_styles(){
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize');
 
-	wp_register_style('meanmenucss', get_template_directory_uri() . '/css/meanmenu.css', array(), '2.0.6', 'all');
-	//wp_enqueue_style('meanmenucss');
+    wp_register_style('meanmenucss', get_template_directory_uri() . '/css/meanmenu.css', array(), '2.0.6', 'all');
+    //wp_enqueue_style('meanmenucss');
 
     wp_register_style('chosencss', get_template_directory_uri() . '/css/chosen.css', array(), '1.6.2', 'all');
     wp_enqueue_style('chosencss');
 
     wp_register_style('animate', get_template_directory_uri() . '/css/animate.css', array(), '3.5.2', 'all');
-	wp_enqueue_style('animate');
+    wp_enqueue_style('animate');
 
     wp_register_style('slickcss', get_template_directory_uri() . '/css/slick.css', array(), '2.0.6', 'all');
     wp_enqueue_style('slickcss');
@@ -243,8 +243,8 @@ function html5blank_styles(){
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0.1', 'all');
     wp_enqueue_style('html5blank');
-	
-	wp_register_style('custom', get_template_directory_uri() . '/css/custom.css', array(), '1.0.1', 'all');
+
+    wp_register_style('custom', get_template_directory_uri() . '/css/custom.css', array(), '1.0.1', 'all');
     wp_enqueue_style('custom');
 
 }
@@ -282,10 +282,10 @@ function add_slug_to_body_class($classes)
     global $post;
     global $current_user;
 
-	$user_role = array_shift($current_user->roles);
+    $user_role = array_shift($current_user->roles);
     $user_ID = $current_user->ID;
     $classes[] = 'user-role-' . $user_role;
-	$classes[] = 'user-id-' . $user_ID;
+    $classes[] = 'user-id-' . $user_ID;
 
     if (is_home()) {
         $key = array_search('blog', $classes);
@@ -317,7 +317,7 @@ function add_slug_to_body_class_2($classes)
 
     $user_array_editor_2 = array('45', '50');
 
-	$user_role = array_shift($current_user->roles);
+    $user_role = array_shift($current_user->roles);
     $user_ID = $current_user->ID;
 
     $classes .= ' user-id-' . $user_ID;
@@ -480,62 +480,62 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
+    if ( 'div' == $args['style'] ) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
     <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
+    <?php if ( 'div' != $args['style'] ) : ?>
 
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
+    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+<?php endif; ?>
+    <div class="comment-author vcard">
         <?php $comment = get_comment();
         $author_id =  $comment->user_id; ?>
         <?php if( get_field('user_avatar', 'user_'.$author_id) ): ?>
             <img src="<?php the_field('user_avatar', 'user_' . $author_id); ?>"/>
         <?php endif; ?>
-	    <?php printf(__('<p><cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+        <?php printf(__('<p><cite class="fn">%s</cite>'), get_comment_author_link()) ?>
         <span class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
     		<?php
-    			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-    		?>
+            printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
+            ?>
     	</span></p>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
+    </div>
+    <?php if ($comment->comment_approved == '0') : ?>
+    <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+    <br />
 <?php endif; ?>
     <?php if(get_field('featured', $comment) == 'No'): ?>
-        <?php $featured = 'Yes'; ?>
-    <?php else: ?>
-        <?php $featured = 'No'; ?>
-    <?php endif; ?>
+    <?php $featured = 'Yes'; ?>
+<?php else: ?>
+    <?php $featured = 'No'; ?>
+<?php endif; ?>
 
     <div class="comment-wrap <?php the_field('featured', $comment); ?>">
         <?php comment_text(); ?>
 
         <div class="reply">
             <?php
-                $id = 'comment_' . $comment->comment_ID;
-                $user_id = apply_filters('determine_current_user', false);
-                $views = array();
+            $id = 'comment_' . $comment->comment_ID;
+            $user_id = apply_filters('determine_current_user', false);
+            $views = array();
 
-                if(get_field('viewed_by', $comment, false)) {
-                    $views = get_field('viewed_by', $comment, false);
-                }
+            if(get_field('viewed_by', $comment, false)) {
+                $views = get_field('viewed_by', $comment, false);
+            }
 
-                if (in_array($user_id, $views)) {
-                    $class = 'active';
-                }
+            if (in_array($user_id, $views)) {
+                $class = 'active';
+            }
             ?>
 
             <div class="seen-by">
@@ -560,9 +560,9 @@ function html5blankcomments($comment, $args, $depth)
         </div>
     </div>
 
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+<?php endif; ?>
 <?php }
 
 /*------------------------------------*\
@@ -623,118 +623,118 @@ function create_post_type_html5()
 {
     register_post_type('project',
         array(
-        'labels' => array(
-            'name' => __('Featured', 'html5blank'),
-            'singular_name' => __('Featured', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New Featured', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit Featured', 'html5blank'),
-            'new_item' => __('New Featured', 'html5blank'),
-            'view' => __('View Featured', 'html5blank'),
-            'view_item' => __('View Featured', 'html5blank'),
-            'search_items' => __('Search Featured', 'html5blank'),
-            'not_found' => __('No Featured found', 'html5blank'),
-            'not_found_in_trash' => __('No Featured found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'hierarchical' => true,
-        'has_archive' => false,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ),
-        'can_export' => true
-    ));
+            'labels' => array(
+                'name' => __('Featured', 'html5blank'),
+                'singular_name' => __('Featured', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New Featured', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit Featured', 'html5blank'),
+                'new_item' => __('New Featured', 'html5blank'),
+                'view' => __('View Featured', 'html5blank'),
+                'view_item' => __('View Featured', 'html5blank'),
+                'search_items' => __('Search Featured', 'html5blank'),
+                'not_found' => __('No Featured found', 'html5blank'),
+                'not_found_in_trash' => __('No Featured found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ),
+            'can_export' => true
+        ));
 
     register_post_type('client',
         array(
-        'labels' => array(
-            'name' => __('Projects', 'html5blank'),
-            'singular_name' => __('Project', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New Project', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit Project', 'html5blank'),
-            'new_item' => __('New Project', 'html5blank'),
-            'view' => __('View Projects', 'html5blank'),
-            'view_item' => __('View Project', 'html5blank'),
-            'search_items' => __('Search Projects', 'html5blank'),
-            'not_found' => __('No Projects found', 'html5blank'),
-            'not_found_in_trash' => __('No Projects found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'hierarchical' => false,
-        'has_archive' => false,
-        'exclude_from_search' => true,
-        'supports' => array(
-            'title',
-            'comments'
-        ),
-        'can_export' => true
-    ));
+            'labels' => array(
+                'name' => __('Projects', 'html5blank'),
+                'singular_name' => __('Project', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New Project', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit Project', 'html5blank'),
+                'new_item' => __('New Project', 'html5blank'),
+                'view' => __('View Projects', 'html5blank'),
+                'view_item' => __('View Project', 'html5blank'),
+                'search_items' => __('Search Projects', 'html5blank'),
+                'not_found' => __('No Projects found', 'html5blank'),
+                'not_found_in_trash' => __('No Projects found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'exclude_from_search' => true,
+            'supports' => array(
+                'title',
+                'comments'
+            ),
+            'can_export' => true
+        ));
 
     register_post_type('testimonial',
         array(
-        'labels' => array(
-            'name' => __('Testimonials', 'html5blank'),
-            'singular_name' => __('Testimonial', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New Testimonial', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit Testimonial', 'html5blank'),
-            'new_item' => __('New Testimonial', 'html5blank'),
-            'view' => __('View Testimonials', 'html5blank'),
-            'view_item' => __('View Testimonial', 'html5blank'),
-            'search_items' => __('Search Testimonials', 'html5blank'),
-            'not_found' => __('No Testimonials found', 'html5blank'),
-            'not_found_in_trash' => __('No Testimonials found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'hierarchical' => true,
-        'has_archive' => false,
-        'exclude_from_search' => true,
-        'publicly_queryable' => false,
-        'supports' => array(
-            'title'
-        ),
-        'can_export' => true
-    ));
+            'labels' => array(
+                'name' => __('Testimonials', 'html5blank'),
+                'singular_name' => __('Testimonial', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New Testimonial', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit Testimonial', 'html5blank'),
+                'new_item' => __('New Testimonial', 'html5blank'),
+                'view' => __('View Testimonials', 'html5blank'),
+                'view_item' => __('View Testimonial', 'html5blank'),
+                'search_items' => __('Search Testimonials', 'html5blank'),
+                'not_found' => __('No Testimonials found', 'html5blank'),
+                'not_found_in_trash' => __('No Testimonials found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => false,
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'supports' => array(
+                'title'
+            ),
+            'can_export' => true
+        ));
 
     register_post_type('funds',
         array(
-        'labels' => array(
-            'name' => __('Fund Lists', 'html5blank'),
-            'singular_name' => __('Fund', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New Fund', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit Fund', 'html5blank'),
-            'new_item' => __('New Fund', 'html5blank'),
-            'view' => __('View Funds', 'html5blank'),
-            'view_item' => __('View Fund', 'html5blank'),
-            'search_items' => __('Search Funds', 'html5blank'),
-            'not_found' => __('No Funds found', 'html5blank'),
-            'not_found_in_trash' => __('No Funds found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'hierarchical' => true,
-        'has_archive' => false,
-        'exclude_from_search' => true,
-        'publicly_queryable' => false,
-        'supports' => array(
-            'title'
-        ),
-        'can_export' => true
-    ));
+            'labels' => array(
+                'name' => __('Fund Lists', 'html5blank'),
+                'singular_name' => __('Fund', 'html5blank'),
+                'add_new' => __('Add New', 'html5blank'),
+                'add_new_item' => __('Add New Fund', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit Fund', 'html5blank'),
+                'new_item' => __('New Fund', 'html5blank'),
+                'view' => __('View Funds', 'html5blank'),
+                'view_item' => __('View Fund', 'html5blank'),
+                'search_items' => __('Search Funds', 'html5blank'),
+                'not_found' => __('No Funds found', 'html5blank'),
+                'not_found_in_trash' => __('No Funds found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => false,
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'supports' => array(
+                'title'
+            ),
+            'can_export' => true
+        ));
 }
 
 add_action( 'init', 'create_project_taxonomies', 0 );
 
 function create_project_taxonomies() {
-	$labels = array(
+    $labels = array(
         'name'              => __('Project Categories', 'html5blank'),
         'singular_name'     => __('Project Category', 'html5blank'),
         'search_items'      => __('Search Project Categories', 'html5blank'),
@@ -746,20 +746,20 @@ function create_project_taxonomies() {
         'add_new_item'      => __('Add New Project Category', 'html5blank'),
         'new_item_name'     => __('New Project Category Name', 'html5blank'),
         'menu_name'         => __('Project Categories', 'html5blank'),
-	);
+    );
 
-	$args = array(
+    $args = array(
         'public' => true,
         'publicly_queryable' => false,
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'project-category', 'hierarchical' => true ),
-	);
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'project-category', 'hierarchical' => true ),
+    );
 
-	register_taxonomy('project-category', array( 'project'), $args);
+    register_taxonomy('project-category', array( 'project'), $args);
 }
 
 /*------------------------------------*\
@@ -796,7 +796,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyBjczDQ0CHAV9SUiCKx-rH4wlR4EZF5OgU');
+    acf_update_setting('google_api_key', 'AIzaSyBjczDQ0CHAV9SUiCKx-rH4wlR4EZF5OgU');
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -805,10 +805,10 @@ function my_acf_input_admin_footer() { ?>
     <script type="text/javascript">
         (function($) {
             acf.add_filter('color_picker_args', function( args, $field ){
-            	// do something to args
-            	args.palettes = ['#2ec0c0', '#f4627e', '#8e9196']
-            	// return
-            	return args;
+                // do something to args
+                args.palettes = ['#2ec0c0', '#f4627e', '#8e9196']
+                // return
+                return args;
             });
         })(jQuery);
     </script>
@@ -837,14 +837,14 @@ function custom_login_message( $message ) {
 }
 
 function custom_login_labels() {
-	function custom_username_label( $translated_text, $text, $domain ) {
-		if ('Username or Email Address' === $text) {
-			$translated_text = __( 'Email Address' , 'html5blank' );
-		}
-		return $translated_text;
-	}
+    function custom_username_label( $translated_text, $text, $domain ) {
+        if ('Username or Email Address' === $text) {
+            $translated_text = __( 'Email Address' , 'html5blank' );
+        }
+        return $translated_text;
+    }
 
-	add_filter('gettext', 'custom_username_label', 20, 3);
+    add_filter('gettext', 'custom_username_label', 20, 3);
 }
 
 function custom_login_title() {
@@ -886,18 +886,18 @@ function add_loginout_link($items, $args) {
  */
 
 function my_login_redirect( $redirect_to, $request, $user ) {
-	//is there a user to check?
-	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-		//check for admins
-		if ( in_array( 'administrator', $user->roles ) ) {
-			// redirect them to the default place
-			return '/my-projects';
-		} else {
-			return '/my-projects';
-		}
-	} else {
-		return $redirect_to;
-	}
+    //is there a user to check?
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        //check for admins
+        if ( in_array( 'administrator', $user->roles ) ) {
+            // redirect them to the default place
+            return '/my-projects';
+        } else {
+            return '/my-projects';
+        }
+    } else {
+        return $redirect_to;
+    }
 }
 
 add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
@@ -906,14 +906,14 @@ add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
 
 function admin_default_page() {
     if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-		//check for admins
-		if ( in_array( 'administrator', $user->roles ) ) {
-			// redirect them to the default place
-			return home_url();
-		} else {
-			return '/my-projects';
-		}
-	}
+        //check for admins
+        if ( in_array( 'administrator', $user->roles ) ) {
+            // redirect them to the default place
+            return home_url();
+        } else {
+            return '/my-projects';
+        }
+    }
 }
 
 //add_filter('login_redirect', 'admin_default_page');
@@ -1203,186 +1203,186 @@ function filter_plugin_updates( $value ) {
 add_action('save_post', 'save_my_metadata');
 
 function save_my_metadata($post){
-	global $wpdb;
-	$post = get_post($post);
+    global $wpdb;
+    $post = get_post($post);
 
-	if($post->post_type == 'client'){
-		$user_ids = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."postmeta` WHERE `post_id` = ".$post->ID." AND `meta_key` LIKE 'legal_files_2_%_doc_uploaded_for' ORDER BY meta_id ASC");
-		$f = 0;
+    if($post->post_type == 'client'){
+        $user_ids = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."postmeta` WHERE `post_id` = ".$post->ID." AND `meta_key` LIKE 'legal_files_2_%_doc_uploaded_for' ORDER BY meta_id ASC");
+        $f = 0;
 
-		foreach($user_ids as $user_id){
-			$last_ids = array();
-			$last_ids = get_option('action_notn_sent_to');
-			//~ echo "<pre>"; print_r($last_ids); echo "</pre>";
-			$meta_id = $user_id->meta_id;
+        foreach($user_ids as $user_id){
+            $last_ids = array();
+            $last_ids = get_option('action_notn_sent_to');
+            //~ echo "<pre>"; print_r($last_ids); echo "</pre>";
+            $meta_id = $user_id->meta_id;
 
-			$user_info = get_userdata($user_id->meta_value);
+            $user_info = get_userdata($user_id->meta_value);
 
-			$header = "MIME-Version: 1.0\n";
-			$header .= "Content-Type: text/html; charset=utf-8\n";
+            $header = "MIME-Version: 1.0\n";
+            $header .= "Content-Type: text/html; charset=utf-8\n";
             $header .= "From: Little Fish <no-reply@littlefishproperties.com.au>";
-			$dueDate = get_post_meta($post->ID,'legal_files_2_'.$f.'_due_date',true);
+            $dueDate = get_post_meta($post->ID,'legal_files_2_'.$f.'_due_date',true);
 
-			$mailcontent = get_option('action_required_email_content');
-			if($mailcontent == '' || $mailcontent === null || $mailcontent === false){
-				$newMessage = 'A new document(s) has been uploaded to the '.get_the_title($post->ID).' project, action is required ';
-				if($dueDate != '' && $dueDate !== false && $dueDate !== null){
-					$duedate = date('d-m-Y',strtotime($dueDate));
-					$newMessage .= 'before '.$duedate.'.';
-				} else {
-					$newMessage .= 'ASAP.';
-				}
-			} else {
-				if(strpos($mailcontent, '##due_date##')){
-					if($dueDate != '' && $dueDate !== false && $dueDate !== null){
-						$duedate = date('d-m-Y',strtotime($dueDate));
-					} else {
-						$duedate = 'ASAP.';
-						if(strpos($mailcontent, 'before ##due_date##')){
-							$mailcontent = str_replace('before ##due_date##','##due_date##',$mailcontent);
-						}
-					}
-					$mailcontent = str_replace('##due_date##',$duedate,$mailcontent);
-				}
-				$mailcontent = nl2br(str_replace(' ', '&nbsp;', $mailcontent), true);
-				if(strpos($mailcontent, '##project_name##')){
-					$post_title="<a href='' style='text-decoration:none;color: #222222;'>".get_the_title($post->ID)."</a>";
-					$mailcontent = str_replace('##project_name##',$post_title,$mailcontent);
-				}
+            $mailcontent = get_option('action_required_email_content');
+            if($mailcontent == '' || $mailcontent === null || $mailcontent === false){
+                $newMessage = 'A new document(s) has been uploaded to the '.get_the_title($post->ID).' project, action is required ';
+                if($dueDate != '' && $dueDate !== false && $dueDate !== null){
+                    $duedate = date('d-m-Y',strtotime($dueDate));
+                    $newMessage .= 'before '.$duedate.'.';
+                } else {
+                    $newMessage .= 'ASAP.';
+                }
+            } else {
+                if(strpos($mailcontent, '##due_date##')){
+                    if($dueDate != '' && $dueDate !== false && $dueDate !== null){
+                        $duedate = date('d-m-Y',strtotime($dueDate));
+                    } else {
+                        $duedate = 'ASAP.';
+                        if(strpos($mailcontent, 'before ##due_date##')){
+                            $mailcontent = str_replace('before ##due_date##','##due_date##',$mailcontent);
+                        }
+                    }
+                    $mailcontent = str_replace('##due_date##',$duedate,$mailcontent);
+                }
+                $mailcontent = nl2br(str_replace(' ', '&nbsp;', $mailcontent), true);
+                if(strpos($mailcontent, '##project_name##')){
+                    $post_title="<a href='' style='text-decoration:none;color: #222222;'>".get_the_title($post->ID)."</a>";
+                    $mailcontent = str_replace('##project_name##',$post_title,$mailcontent);
+                }
 
-				$newMessage = $mailcontent;
-				//~ echo $newMessage = nl2br(str_replace(' ', '&nbsp;', $mailcontent), true); die();
-			}
+                $newMessage = $mailcontent;
+                //~ echo $newMessage = nl2br(str_replace(' ', '&nbsp;', $mailcontent), true); die();
+            }
 
 
 
-			$action_required = get_post_meta($post->ID,'legal_files_2_'.$f.'_action_required',true);
+            $action_required = get_post_meta($post->ID,'legal_files_2_'.$f.'_action_required',true);
             $assigned_to = get_post_meta($post->ID,'legal_files_2_'.$f.'_doc_uploaded_for',true);
 
-			$name = get_user_meta($user_info->ID,'first_name',true);
-			if($action_required == 'Yes'){
-				$message = "Hi $name,<br><br>
+            $name = get_user_meta($user_info->ID,'first_name',true);
+            if($action_required == 'Yes'){
+                $message = "Hi $name,<br><br>
 				$newMessage<br><br>
 				<a href='".get_the_permalink($post->ID)."#action-required' target='_blank'>".get_the_permalink($post->ID)."#action-required</a><br>
 				-<br>Regards,<br>
 				Team Little Fish";
-				$subject = '[Action Required] ' . get_the_title($post_id);
-			} else {
-				$post_info = get_post( $post->ID );
-				$message = "Hi $name,<br><br>
+                $subject = '[Action Required] ' . get_the_title($post_id);
+            } else {
+                $post_info = get_post( $post->ID );
+                $message = "Hi $name,<br><br>
 				A new file has been uploaded to <a href='' style='text-decoration:none;color: #222222;'>".$post_info->post_title."</a>, click the link below to view and download the file.<br><br>
 				<a href='".get_the_permalink($post->ID)."#file-uploaded' target='_blank'>".get_the_permalink($post->ID)."#file-uploaded</a><br>
 				-<br>Regards,<br>
 				Team Little Fish";
-				$subject = '[File Uploaded] ' . get_the_title($post_id);
-			}
-			$to = $user_info->data->user_email;
+                $subject = '[File Uploaded] ' . get_the_title($post_id);
+            }
+            $to = $user_info->data->user_email;
 
-			if(!in_array($meta_id, $last_ids)){
-				if($action_required == 'Yes'){
-					// send the email
-					$attachment = get_option('action_required_email_attachment');
+            if(!in_array($meta_id, $last_ids)){
+                if($action_required == 'Yes'){
+                    // send the email
+                    $attachment = get_option('action_required_email_attachment');
 
-					if($attachment != '' && $attachment !== null && $attachment !== false){
-						$attachments = array();
-						$attachments[] = str_replace(home_url()."/wp-content",WP_CONTENT_DIR,wp_get_attachment_url( $attachment ));
-						wp_mail($to, $subject, $message, $header, $attachments);
-					} else {
-						wp_mail($to, $subject, $message, $header);
-					}
-				} else {
-					$blogusers = get_users('role=Administrator');
-					foreach ($blogusers as $user) {
-						$admin_email = $user->user_email;
-						$admin_ID = $user->ID;
-					}
-					$subscribed_users = get_post_meta($post->ID,'client_id',true);
-					foreach($subscribed_users as $subscriber){
-						$subscriber_info = get_user_by( 'ID', $subscriber);
-						$to_mail = $subscriber_info->user_email;
-						$subscribername = get_user_meta($subscriber,'first_name',true);
-						$message = "Hi $subscribername,<br><br>
+                    if($attachment != '' && $attachment !== null && $attachment !== false){
+                        $attachments = array();
+                        $attachments[] = str_replace(home_url()."/wp-content",WP_CONTENT_DIR,wp_get_attachment_url( $attachment ));
+                        wp_mail($to, $subject, $message, $header, $attachments);
+                    } else {
+                        wp_mail($to, $subject, $message, $header);
+                    }
+                } else {
+                    $blogusers = get_users('role=Administrator');
+                    foreach ($blogusers as $user) {
+                        $admin_email = $user->user_email;
+                        $admin_ID = $user->ID;
+                    }
+                    $subscribed_users = get_post_meta($post->ID,'client_id',true);
+                    foreach($subscribed_users as $subscriber){
+                        $subscriber_info = get_user_by( 'ID', $subscriber);
+                        $to_mail = $subscriber_info->user_email;
+                        $subscribername = get_user_meta($subscriber,'first_name',true);
+                        $message = "Hi $subscribername,<br><br>
 						A new file has been uploaded to <a href='' style='text-decoration:none;color: #222222;'>".$post_info->post_title."</a>, click the link below to view and download the file.<br><br>
 						<a href='".get_the_permalink($post->ID)."#file-uploaded' target='_blank'>".get_the_permalink($post->ID)."#file-uploaded</a><br>
 						-<br>Regards,<br>
 						Team Little Fish";
-						if($subscriber != $admin_ID){
+                        if($subscriber != $admin_ID){
                             if($assigned_to == '' || $assigned_to == $subscriber){
-								wp_mail($to_mail, $subject, $message, $header);
-							}
-						}
-					}
-				}
-				//~ $mail_sent_ids[] = $meta_id;
-			}
+                                wp_mail($to_mail, $subject, $message, $header);
+                            }
+                        }
+                    }
+                }
+                //~ $mail_sent_ids[] = $meta_id;
+            }
 
-			$mail_sent_ids = array();
-			if($last_ids === false || $last_ids === null || $last_ids == ''){
-				$mail_sent_ids[] = $meta_id;
-			} else {
-				foreach($last_ids as $key=>$value){
-					if($value != $meta_id){
-						$mail_sent_ids[] = $value;
-					}
-				}
-				$mail_sent_ids[] = $meta_id;
-			}
-			update_option('action_notn_sent_to',$mail_sent_ids);
+            $mail_sent_ids = array();
+            if($last_ids === false || $last_ids === null || $last_ids == ''){
+                $mail_sent_ids[] = $meta_id;
+            } else {
+                foreach($last_ids as $key=>$value){
+                    if($value != $meta_id){
+                        $mail_sent_ids[] = $value;
+                    }
+                }
+                $mail_sent_ids[] = $meta_id;
+            }
+            update_option('action_notn_sent_to',$mail_sent_ids);
 
-			$f++;
-		}
-		//~ print_r($mail_sent_ids); die();
+            $f++;
+        }
+        //~ print_r($mail_sent_ids); die();
 
 
-	}
+    }
 }
 
 add_action( 'admin_enqueue_scripts', 'load_custom_script' );
 function load_custom_script() {
-	if(is_admin()){
-		wp_enqueue_script('custom_js_script', get_bloginfo('template_url').'/js/custom-script.js', array('jquery'));
-	} else {
-		return false;
-	}
+    if(is_admin()){
+        wp_enqueue_script('custom_js_script', get_bloginfo('template_url').'/js/custom-script.js', array('jquery'));
+    } else {
+        return false;
+    }
 }
 
 function myplugin_add_meta_box() {
-	$screens = array( 'client' );
-	foreach ( $screens as $screen ) {
-		add_meta_box(
-			'testdiv',
-			__( 'Uploaded Files', 'myplugin_textdomain' ),
-			'myplugin_meta_box_callback',
-			$screen,
-			'side'
-		);
-	}
+    $screens = array( 'client' );
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'testdiv',
+            __( 'Uploaded Files', 'myplugin_textdomain' ),
+            'myplugin_meta_box_callback',
+            $screen,
+            'side'
+        );
+    }
 }
 add_action( 'add_meta_boxes', 'myplugin_add_meta_box', 2 );
 
 function myplugin_meta_box_callback(){
-	global $wpdb;
-	$uploaded_files = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."uploaded_doc` where post_id=".$_GET['post']." AND status = 1 ORDER BY `id` DESC");
-	if(empty($uploaded_files)){
-		echo "-- No file uploaded yet --";
-	} else {
-		//~ echo "<pre>"; print_r($uploaded_files); echo "</pre>";
-		?>
-			<ul>
-				<?php foreach($uploaded_files as $file){ ?>
-					<li><i class="deleteUploaded dashicons dashicons-trash" attachment-id="<?php echo $file->id; ?>"></i><a href="<?php echo wp_get_attachment_url($file->file_id); ?>"><?php echo $file->file_name; ?></a></li>
-				<?php } ?>
-			</ul>
-			<style>
-				.deleteUploaded:hover{cursor:pointer;}
-				.deleteUploaded.dashicons.dashicons-trash { margin: 0 5px 0 0; }
-			</style>
-		<?php
-	}
+    global $wpdb;
+    $uploaded_files = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."uploaded_doc` where post_id=".$_GET['post']." AND status = 1 ORDER BY `id` DESC");
+    if(empty($uploaded_files)){
+        echo "-- No file uploaded yet --";
+    } else {
+        //~ echo "<pre>"; print_r($uploaded_files); echo "</pre>";
+        ?>
+        <ul>
+            <?php foreach($uploaded_files as $file){ ?>
+                <li><i class="deleteUploaded dashicons dashicons-trash" attachment-id="<?php echo $file->id; ?>"></i><a href="<?php echo wp_get_attachment_url($file->file_id); ?>"><?php echo $file->file_name; ?></a></li>
+            <?php } ?>
+        </ul>
+        <style>
+            .deleteUploaded:hover{cursor:pointer;}
+            .deleteUploaded.dashicons.dashicons-trash { margin: 0 5px 0 0; }
+        </style>
+        <?php
+    }
 }
 
 function my_custom_tooltip() {
-	wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/js/custom_admin_script.js', array(), '1.0' );
+    wp_enqueue_script( 'my_custom_script', get_template_directory_uri() . '/js/custom_admin_script.js', array(), '1.0' );
 }
 
 add_action('admin_enqueue_scripts', 'my_custom_tooltip');
@@ -1392,20 +1392,20 @@ add_action("wp_ajax_delete_uploaded", "delete_uploaded");
 add_action("wp_ajax_nopriv_delete_uploaded", "delete_uploaded");
 
 function delete_uploaded() {
-	global $wpdb;
-	$id = $_POST['id'];
+    global $wpdb;
+    $id = $_POST['id'];
 
-	if($id != ''){
-		$table = $wpdb->prefix.'uploaded_doc';
-		if($wpdb->delete( $table, array( 'id' => $id ) )){
-			echo 1;
-		} else {
-			echo 0;
-		}
-	} else {
-		echo 0;
-	}
-	die();
+    if($id != ''){
+        $table = $wpdb->prefix.'uploaded_doc';
+        if($wpdb->delete( $table, array( 'id' => $id ) )){
+            echo 1;
+        } else {
+            echo 0;
+        }
+    } else {
+        echo 0;
+    }
+    die();
 }
 
 
@@ -1413,118 +1413,118 @@ add_action("wp_ajax_last_uploaded", "last_uploaded");
 add_action("wp_ajax_nopriv_last_uploaded", "last_uploaded");
 
 function last_uploaded() {
-	global $wpdb;
-	$id = $_POST['metaId'];
-	$userId = $_POST['userId'];
-	if($id != '' && $userId != ''){
-		update_user_meta($userId,'last_selected_file',$id);
-		echo 1;
-	} else {
-		echo 0;
-	}
-	die();
+    global $wpdb;
+    $id = $_POST['metaId'];
+    $userId = $_POST['userId'];
+    if($id != '' && $userId != ''){
+        update_user_meta($userId,'last_selected_file',$id);
+        echo 1;
+    } else {
+        echo 0;
+    }
+    die();
 }
 
 add_action("wp_ajax_downloaded_files", "downloaded_files");
 add_action("wp_ajax_nopriv_downloaded_files", "downloaded_files");
 
 function downloaded_files() {
-	global $wpdb;
-	$metaId = $_POST['metaId'];
-	$postId = $_POST['postId'];
-	if($metaId != '' && $postId != ''){
-		if($wpdb->insert($wpdb->prefix.'uploaded_doc', array('user_id' => get_current_user_id(),'post_id' => $postId,'meta_id' => $metaId, 'status' => 0, 'upload_date' => date('Y-m-d H:i:s')))){
-			echo 1;
-		} else {
-			echo $wpdb->last_error;
-			echo 2;
-		}
-	} else {
-		echo 0;
-	}
-	die();
+    global $wpdb;
+    $metaId = $_POST['metaId'];
+    $postId = $_POST['postId'];
+    if($metaId != '' && $postId != ''){
+        if($wpdb->insert($wpdb->prefix.'uploaded_doc', array('user_id' => get_current_user_id(),'post_id' => $postId,'meta_id' => $metaId, 'status' => 0, 'upload_date' => date('Y-m-d H:i:s')))){
+            echo 1;
+        } else {
+            echo $wpdb->last_error;
+            echo 2;
+        }
+    } else {
+        echo 0;
+    }
+    die();
 }
 
 function wpse_288373_register_submenu_page(){
-	add_submenu_page('edit.php?post_type=client', __('Email Settings','menu-test'), __('Email Settings','menu-test'), 'read', 'testsettings', 'mt_settings_page');
+    add_submenu_page('edit.php?post_type=client', __('Email Settings','menu-test'), __('Email Settings','menu-test'), 'read', 'testsettings', 'mt_settings_page');
 }
 add_action('admin_menu', 'wpse_288373_register_submenu_page');
 function mt_settings_page(){ ?>
 
     <div class="wrap">
-		<h1>Email Settings</h1>
-		<?php
-			if(isset($_REQUEST['submit']) && $_REQUEST['submit'] == 'Update Content'){
-				update_option( 'action_required_email_content', $_REQUEST['email_custom_content'] );
-				update_option( 'action_required_email_attachment', $_REQUEST['email_custom_attachment'] ); ?>
-				<div id="message" class="updated notice notice-success is-dismissible">
-					<p>Content uploaded Successfully</p>
-					<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
-				</div>
+        <h1>Email Settings</h1>
+        <?php
+        if(isset($_REQUEST['submit']) && $_REQUEST['submit'] == 'Update Content'){
+            update_option( 'action_required_email_content', $_REQUEST['email_custom_content'] );
+            update_option( 'action_required_email_attachment', $_REQUEST['email_custom_attachment'] ); ?>
+            <div id="message" class="updated notice notice-success is-dismissible">
+                <p>Content uploaded Successfully</p>
+                <button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
+            </div>
 
-			<?php }
-			$mailcontent = get_option('action_required_email_content');
-			if($mailcontent === null || $mailcontent === false){
-				$mailcontent = '';
-			}
-			$action_required_email_attachment = get_option('action_required_email_attachment');
-			if($action_required_email_attachment === null || $action_required_email_attachment === false){
-				$action_required_email_attachment = '';
-			}
-		?>
-		<form method="post" action="">
-			<table class="form-table">
-				<tbody>
-					<tr>
-						<th scope="row"><label>Add content Here: </label></th>
-						<td>
-							<textarea name="email_custom_content" rows="10" cols="100"><?php echo $mailcontent; ?></textarea>
-							<p class="description" id="tagline-description">
-								Following shortcodes can be used<br>
-								##project_name## (For project Name)<br>
-								##due_date## (For added due date)
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
+        <?php }
+        $mailcontent = get_option('action_required_email_content');
+        if($mailcontent === null || $mailcontent === false){
+            $mailcontent = '';
+        }
+        $action_required_email_attachment = get_option('action_required_email_attachment');
+        if($action_required_email_attachment === null || $action_required_email_attachment === false){
+            $action_required_email_attachment = '';
+        }
+        ?>
+        <form method="post" action="">
+            <table class="form-table">
+                <tbody>
+                <tr>
+                    <th scope="row"><label>Add content Here: </label></th>
+                    <td>
+                        <textarea name="email_custom_content" rows="10" cols="100"><?php echo $mailcontent; ?></textarea>
+                        <p class="description" id="tagline-description">
+                            Following shortcodes can be used<br>
+                            ##project_name## (For project Name)<br>
+                            ##due_date## (For added due date)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
 
-						</td>
-					</tr>
-					<tr>
-						<td><label>Upload attachment:</label></td>
-						<td>
-							<?php $mime = get_post_mime_type( $action_required_email_attachment );
-							$mime = explode('/',$mime);  ?>
-							<div class="uploadedImage">
-								<?php if($mime[0] == 'image'){ ?>
-									<img src="<?php echo wp_get_attachment_url( $action_required_email_attachment ); ?>" width="250">
-								<?php } else {
-									echo "File Name: ".get_the_title($action_required_email_attachment).".".$mime[1];
-								} ?>
-							</div>
-							<input id="process_custom_images" class="regular-text set_custom_images" value="<?php echo $action_required_email_attachment;  ?>" name="email_custom_attachment" type="hidden">
-							<button class="set_custom_images button">Select Book</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><input type="submit" value="Update Content" name="submit" class="button button-primary button-large"></td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Upload attachment:</label></td>
+                    <td>
+                        <?php $mime = get_post_mime_type( $action_required_email_attachment );
+                        $mime = explode('/',$mime);  ?>
+                        <div class="uploadedImage">
+                            <?php if($mime[0] == 'image'){ ?>
+                                <img src="<?php echo wp_get_attachment_url( $action_required_email_attachment ); ?>" width="250">
+                            <?php } else {
+                                echo "File Name: ".get_the_title($action_required_email_attachment).".".$mime[1];
+                            } ?>
+                        </div>
+                        <input id="process_custom_images" class="regular-text set_custom_images" value="<?php echo $action_required_email_attachment;  ?>" name="email_custom_attachment" type="hidden">
+                        <button class="set_custom_images button">Select Book</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Update Content" name="submit" class="button button-primary button-large"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
 <?php }
 function include_myuploadscript() {
-	/*
-	 * I recommend to add additional conditions just to not to load the scipts on each page
-	 * like:
-	 * if ( !in_array('post-new.php','post.php') ) return;
-	 */
-	if ( ! did_action( 'wp_enqueue_media' ) ) {
-		wp_enqueue_media();
-	}
-	wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/js/admin.js', array('jquery'), null, false );
+    /*
+     * I recommend to add additional conditions just to not to load the scipts on each page
+     * like:
+     * if ( !in_array('post-new.php','post.php') ) return;
+     */
+    if ( ! did_action( 'wp_enqueue_media' ) ) {
+        wp_enqueue_media();
+    }
+    wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/js/admin.js', array('jquery'), null, false );
 
 }
 
@@ -1533,67 +1533,65 @@ add_action( 'admin_enqueue_scripts', 'include_myuploadscript' );
 //custom
 function filter_handler( $data , $postarr ) {
 
-	global $wpdb;
-	$new_data_arr_acf_files = $_POST['acf']['field_597f3a9afa683'];
-	$new_data_arr_acf_files_only = array();
-	if($new_data_arr_acf_files){
-        foreach($new_data_arr_acf_files as $new_data_arr_acf_file){
+    global $wpdb;
+    $new_data_arr_acf_files = $_POST['acf']['field_597f3a9afa683'];
+    $new_data_arr_acf_files_only = array();
+    foreach($new_data_arr_acf_files as $new_data_arr_acf_file){
             $new_data_arr_acf_files_only[] = $new_data_arr_acf_file['field_597f3a9afa686'];
-        }
     }
-	$old_data_arr_acf_files = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."postmeta` WHERE `post_id` = ".$postarr['ID']." AND `meta_key` LIKE 'legal_files_2_%_legal_file'  ORDER BY `meta_id` ASC");
-	$old_data_arr_acf_files_only = array();
-	$value_different_for_doc_uploaded_for = array();
-	$k = 0;
-	foreach($old_data_arr_acf_files as $old_data_arr_acf_file){
-		if($new_data_arr_acf_files_only[$k] != $old_data_arr_acf_file->meta_value){
-			$meta_key_s = 'legal_files_2_'.$k.'_doc_uploaded_for';
-			$mid = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $postarr['ID'], $meta_key_s) );
-			if( $mid != '' ){
-				$value_different_for_doc_uploaded_for[] = $mid[0]->meta_id;
-			}
-		}
-		// $old_data_arr_acf_files_only[] = $old_data_arr_acf_file->meta_value;
-		$k++;
-	}
+    $old_data_arr_acf_files = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."postmeta` WHERE `post_id` = ".$postarr['ID']." AND `meta_key` LIKE 'legal_files_2_%_legal_file'  ORDER BY `meta_id` ASC");
+    $old_data_arr_acf_files_only = array();
+    $value_different_for_doc_uploaded_for = array();
+    $k = 0;
+    foreach($old_data_arr_acf_files as $old_data_arr_acf_file){
+        if($new_data_arr_acf_files_only[$k] != $old_data_arr_acf_file->meta_value){
+            $meta_key_s = 'legal_files_2_'.$k.'_doc_uploaded_for';
+            $mid = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $postarr['ID'], $meta_key_s) );
+            if( $mid != '' ){
+                $value_different_for_doc_uploaded_for[] = $mid[0]->meta_id;
+            }
+        }
+        // $old_data_arr_acf_files_only[] = $old_data_arr_acf_file->meta_value;
+        $k++;
+    }
 
 
 
-	foreach($value_different_for_doc_uploaded_for as $key=>$val){
-		$wpdb->update($wpdb->prefix.'uploaded_doc', array('meta_id'=>'0'), array('meta_id'=>$val, 'post_id'=> $postarr['ID']));
-	}
+    foreach($value_different_for_doc_uploaded_for as $key=>$val){
+        $wpdb->update($wpdb->prefix.'uploaded_doc', array('meta_id'=>'0'), array('meta_id'=>$val, 'post_id'=> $postarr['ID']));
+    }
 
-	$action_notn_sent_to_old = get_option('action_notn_sent_to');
-	$action_notn_sent_to_new = array_values(array_diff($action_notn_sent_to_old, $value_different_for_doc_uploaded_for));
+    $action_notn_sent_to_old = get_option('action_notn_sent_to');
+    $action_notn_sent_to_new = array_values(array_diff($action_notn_sent_to_old, $value_different_for_doc_uploaded_for));
 
-	update_option('action_notn_sent_to',$action_notn_sent_to_new);
-
-
-	$value_different_for_doc_uploaded_for_u = array();
-	$u = 0;
-	foreach($old_data_arr_acf_files as $old_data_arr_acf_file){
-		if($new_data_arr_acf_files_only[$u] != $old_data_arr_acf_file->meta_value){
-			$meta_key_s = 'legal_files_2_'.$u.'_doc_uploaded_for';
-			$mid = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $postarr['ID'], $meta_key_s) );
-			if( $mid != '' ){
-				$value_different_for_doc_uploaded_for_u[] = $mid[0]->meta_id;
-			}
-		}
-		// $old_data_arr_acf_files_only[] = $old_data_arr_acf_file->meta_value;
-		$u++;
-	}
-	$action_notn_sent_to_old_u = get_option('reminder_notn_sent_to');
+    update_option('action_notn_sent_to',$action_notn_sent_to_new);
 
 
-	$action_notn_sent_to_new_u = array_values(array_diff($action_notn_sent_to_old_u, $value_different_for_doc_uploaded_for_u));
-	//~ print_r($action_notn_sent_to_old_u);
-	//~ print_r($value_different_for_doc_uploaded_for_u);
-	//~ print_r($action_notn_sent_to_new_u);
+    $value_different_for_doc_uploaded_for_u = array();
+    $u = 0;
+    foreach($old_data_arr_acf_files as $old_data_arr_acf_file){
+        if($new_data_arr_acf_files_only[$u] != $old_data_arr_acf_file->meta_value){
+            $meta_key_s = 'legal_files_2_'.$u.'_doc_uploaded_for';
+            $mid = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->postmeta WHERE post_id = %d AND meta_key = %s", $postarr['ID'], $meta_key_s) );
+            if( $mid != '' ){
+                $value_different_for_doc_uploaded_for_u[] = $mid[0]->meta_id;
+            }
+        }
+        // $old_data_arr_acf_files_only[] = $old_data_arr_acf_file->meta_value;
+        $u++;
+    }
+    $action_notn_sent_to_old_u = get_option('reminder_notn_sent_to');
 
-	//~ die();
-	update_option('reminder_notn_sent_to',$action_notn_sent_to_new_u);
-	// $old_data = get_post($postarr['ID']);
-	return $data;
+
+    $action_notn_sent_to_new_u = array_values(array_diff($action_notn_sent_to_old_u, $value_different_for_doc_uploaded_for_u));
+    //~ print_r($action_notn_sent_to_old_u);
+    //~ print_r($value_different_for_doc_uploaded_for_u);
+    //~ print_r($action_notn_sent_to_new_u);
+
+    //~ die();
+    update_option('reminder_notn_sent_to',$action_notn_sent_to_new_u);
+    // $old_data = get_post($postarr['ID']);
+    return $data;
 }
 
 add_filter( 'wp_insert_post_data', 'filter_handler', '8', 2 );
@@ -1614,17 +1612,17 @@ function tinymce_style() {
 add_action('after_setup_theme', 'tinymce_style');
 
 /**
-* Collapse ACF Repeater by default
-*/
+ * Collapse ACF Repeater by default
+ */
 add_action('acf/input/admin_head', 'wpster_acf_repeater_collapse');
 
 function wpster_acf_repeater_collapse() { ?>
     <style id="wpster-acf-repeater-collapse">.acf-repeater .acf-table {display:none;}</style>
     <script type="text/javascript">
-         jQuery(function($) {
-              $('.acf-repeater .acf-row').addClass('-collapsed');
-              $('#wpster-acf-repeater-collapse').detach();
-         });
+        jQuery(function($) {
+            $('.acf-repeater .acf-row').addClass('-collapsed');
+            $('#wpster-acf-repeater-collapse').detach();
+        });
     </script>
 <?php }
 
@@ -1646,11 +1644,11 @@ add_filter('tiny_mce_before_init', 'load_custom_fonts');
 add_filter('su/data/shortcodes', 'custom_shortcodes');
 
 /**
-  * Filter to modify original shortcodes data and add custom shortcodes
-  *
-  * @param array   $shortcodes Original plugin shortcodes
-  * @return array Modified array
-  */
+ * Filter to modify original shortcodes data and add custom shortcodes
+ *
+ * @param array   $shortcodes Original plugin shortcodes
+ * @return array Modified array
+ */
 
 function custom_shortcodes($shortcodes) {
 
@@ -1761,32 +1759,32 @@ function shortcode_subscribe_form($atts, $content = null) {
 
 //function for setting the last login
 function set_last_login($login) {
-	$user = get_userdatabylogin($login);
-	$curent_login_time = get_user_meta(	$user->ID , 'current_login', true);
-	//add or update the last login value for logged in user
-	if(!empty($curent_login_time)){
-		update_usermeta( $user->ID, 'last_login', $curent_login_time );
-		update_usermeta( $user->ID, 'current_login', current_time('mysql') );
-	}else {
-		update_usermeta( $user->ID, 'current_login', current_time('mysql') );
-		update_usermeta( $user->ID, 'last_login', current_time('mysql') );
-	}
+    $user = get_userdatabylogin($login);
+    $curent_login_time = get_user_meta(	$user->ID , 'current_login', true);
+    //add or update the last login value for logged in user
+    if(!empty($curent_login_time)){
+        update_usermeta( $user->ID, 'last_login', $curent_login_time );
+        update_usermeta( $user->ID, 'current_login', current_time('mysql') );
+    }else {
+        update_usermeta( $user->ID, 'current_login', current_time('mysql') );
+        update_usermeta( $user->ID, 'last_login', current_time('mysql') );
+    }
 }
 
 add_action('wp_login', 'set_last_login');
 
 function get_last_login($user_id) {
-   $last_login = get_user_meta($user_id, 'last_login', true);
+    $last_login = get_user_meta($user_id, 'last_login', true);
 
-   $date_format = get_option('date_format') . ' ' . get_option('time_format');
+    $date_format = get_option('date_format') . ' ' . get_option('time_format');
 
 
-	if(wp_is_mobile()) {
-		$the_last_login = date("M j, y, g:i a", strtotime($last_login));
-	}else {
-		$the_last_login = mysql2date($date_format, $last_login, false);
-	}
-   return $the_last_login;
+    if(wp_is_mobile()) {
+        $the_last_login = date("M j, y, g:i a", strtotime($last_login));
+    }else {
+        $the_last_login = mysql2date($date_format, $last_login, false);
+    }
+    return $the_last_login;
 }
 
 function date_compare($a, $b){
@@ -1820,13 +1818,13 @@ function xero_callback() {
             'httpversion' => '1.0',
             'blocking' => true,
             'headers' => array(
-                    'Authorization' => 'Basic '.base64_encode($concat),
-                    'contentType' => "application/x-www-form-urlencoded",
+                'Authorization' => 'Basic '.base64_encode($concat),
+                'contentType' => "application/x-www-form-urlencoded",
             ),
             'body' => array(
-                    'grant_type' => 'authorization_code',
-                    'code' => $code,
-                    'redirect_uri' => get_home_url().'/xero-callback',
+                'grant_type' => 'authorization_code',
+                'code' => $code,
+                'redirect_uri' => get_home_url().'/xero-callback',
             )
         )
     );
@@ -1842,7 +1840,7 @@ function xero_callback() {
                 'httpversion' => '1.0',
                 'blocking' => true,
                 'headers' => array(
-                     'Authorization' => $auth
+                    'Authorization' => $auth
                 ),
                 'body' => json_decode($response['body'])
             )
@@ -1873,64 +1871,64 @@ function xero_disconnect(){
 }
 
 function add_comments() {
-	global $wpdb;
-	// print_r($_POST);die;
-	$comment_content = strip_tags($_POST['editor']);
-	$comment_parent = 0;
-	$current_post_id = $_POST['current_post_id'];
-	$currentuserid = $_POST['currentuserid'];
-	$time = current_time('mysql');
-	$author_name = get_user_meta($currentuserid,'first_name',true);
-	if(get_user_meta($currentuserid,'last_name',true) != ''){
-		$author_name .= ' '.get_user_meta($currentuserid,'last_name',true);
-	}
-	$user_info = get_userdata($currentuserid);
-	$authorURL = get_author_posts_url($currentuserid);
-	
-	$data = array(
-		'comment_post_ID' => $current_post_id,
-		'comment_author' => $author_name,
-		'comment_author_email' => $user_info->user_email,
-		'comment_author_url' => $authorURL,
-		'comment_content' => $comment_content,
-		'comment_type' => '',
-		'comment_parent' => $comment_parent,
-		'user_id' => $currentuserid,
-		'comment_date' => $time,
-		'comment_approved' => 1,
-	);
-	// print_r($data);die;
-	if(wp_insert_comment($data)){
-		echo 1;
-	}else{
-		echo 0;
-	}
-	die();
-	
+    global $wpdb;
+    // print_r($_POST);die;
+    $comment_content = strip_tags($_POST['editor']);
+    $comment_parent = 0;
+    $current_post_id = $_POST['current_post_id'];
+    $currentuserid = $_POST['currentuserid'];
+    $time = current_time('mysql');
+    $author_name = get_user_meta($currentuserid,'first_name',true);
+    if(get_user_meta($currentuserid,'last_name',true) != ''){
+        $author_name .= ' '.get_user_meta($currentuserid,'last_name',true);
+    }
+    $user_info = get_userdata($currentuserid);
+    $authorURL = get_author_posts_url($currentuserid);
+
+    $data = array(
+        'comment_post_ID' => $current_post_id,
+        'comment_author' => $author_name,
+        'comment_author_email' => $user_info->user_email,
+        'comment_author_url' => $authorURL,
+        'comment_content' => $comment_content,
+        'comment_type' => '',
+        'comment_parent' => $comment_parent,
+        'user_id' => $currentuserid,
+        'comment_date' => $time,
+        'comment_approved' => 1,
+    );
+    // print_r($data);die;
+    if(wp_insert_comment($data)){
+        echo 1;
+    }else{
+        echo 0;
+    }
+    die();
+
 }
 
 add_action('wp_ajax_nopriv_update_viewed_comment', 'update_viewed_comment');
 add_action('wp_ajax_update_viewed_comment', 'update_viewed_comment');
 
 function update_viewed_comment() {
-		// print_r($_POST);die;
-		$currentuserid = $_POST['currentuserid'];
-		$comment_id = $_POST['comment_id'];
-		$commentuserid = $_POST['commentuserid'];
-		// $viewed = get_field('viewed_by', $_POST['comment_id'], false);
-		$viewed = array();
-		$viewed_value = get_comment_meta($comment_id,'comment_viewed_by',true);
-		if(!empty($viewed_value) && $viewed_value !== false && $viewed_value !==null){
-			$viewed = $viewed_value;
-		}
-		if(!in_array($currentuserid, $viewed)) {
-			$viewed[] = $currentuserid;
-		}
-		// print_r($viewed);die;	
-		// update_field('viewed_by', $viewed, $_POST['comment_id']);
-		update_comment_meta($comment_id,'comment_viewed_by',$viewed);
-		// update_post_meta($product_id, 'request_status','5');
-		die();
+    // print_r($_POST);die;
+    $currentuserid = $_POST['currentuserid'];
+    $comment_id = $_POST['comment_id'];
+    $commentuserid = $_POST['commentuserid'];
+    // $viewed = get_field('viewed_by', $_POST['comment_id'], false);
+    $viewed = array();
+    $viewed_value = get_comment_meta($comment_id,'comment_viewed_by',true);
+    if(!empty($viewed_value) && $viewed_value !== false && $viewed_value !==null){
+        $viewed = $viewed_value;
+    }
+    if(!in_array($currentuserid, $viewed)) {
+        $viewed[] = $currentuserid;
+    }
+    // print_r($viewed);die;
+    // update_field('viewed_by', $viewed, $_POST['comment_id']);
+    update_comment_meta($comment_id,'comment_viewed_by',$viewed);
+    // update_post_meta($product_id, 'request_status','5');
+    die();
 }
 
 add_action( 'wpb_custom_cron', 'xero_cron_call');
@@ -2030,4 +2028,4 @@ function xero_cron_call(){
 }
 
 /*31-07-2020-end*/
-
+?>

@@ -1,4 +1,11 @@
 <?php get_header();
+global $current_custom_user;
+$args = array(
+    'post_type' => 'client',
+    'posts_per_page' => -1,
+    'order' => 'DESC'
+);
+$wp_client_query = new WP_Query($args);
 unset($_SESSION['datas']);
 function searchForName($name, $array)
 {
@@ -12,15 +19,23 @@ function searchForName($name, $array)
 ?>
 <?php if (get_field('client_id')): ?>
     <?php
-    global $current_custom_user;
     $clients = get_field('client_id');
+    if($clients){
+        if(in_array_r($current_custom_user, $clients)){
+            $fund_selection = get_field('field_5f55ec4ce0351');
+            if($fund_selection){
+                $org_string_val = "'".$fund_selection->post_title."'";
+            }
+        }
+    }
     ?>
     <?php if (!in_array_r($current_custom_user, $clients)) : ?>
         <script type="text/javascript">
             window.location = "<?php bloginfo('url'); ?>/login/";
         </script>
     <?php endif; ?>
-<?php endif; ?>
+<?php endif;
+?>
 <?php
 $curr_clientid = get_the_ID();
 $clientid = get_field('client_id_task', $curr_clientid);
@@ -39,7 +54,27 @@ $tf = 0;
 
 $current_title = esc_html(get_the_title());
 
-$sql = "SELECT 
+?>
+<?php
+//select tenant id
+$tenantSql = "SELECT `tenantId` FROM `xero_tenants` WHERE tenantName IN ($org_string_val)";
+$tenantRes = $wpdb->get_results($tenantSql,ARRAY_A);
+
+$ten_string_val='';
+$tenant_count = 0;
+$tenant_len = count($tenantRes);
+foreach ($tenantRes as $key => $ten_data){
+    $ten_data = $ten_data['tenantId'];
+    if($tenant_count == $tenant_len - 1) {
+        $comm='';
+    }else{
+        $comm=',';
+    }
+    $ten_string_val.="'".$ten_data."'".$comm;
+    $tenant_count++;
+}
+
+$money_sql = "SELECT 
 accounts.Name as ItemCode,
 lineitem.Description, 
 lineitem.LineAmount, 
@@ -47,6 +82,7 @@ lineitem.TaxAmount,
 exp.Date,
 con.name,
 exp.Type,
+bank_feed.Reference,
 month(exp.Date) as date_month,
 year(exp.Date) as date_year
 FROM xero_expense_lineitem AS lineitem
@@ -55,9 +91,12 @@ LEFT JOIN xero_expense as exp ON lineitem.BankTransactionID = exp.BankTransactio
 LEFT JOIN xero_contact as con ON con.ContactID = exp.ContactID
 LEFT JOIN xero_accounts as accounts ON accounts.Code = lineitem.AccountCode
 LEFT JOIN xero_tracking_category_options as category_options ON category_options.TrackingOptionID = item_track.TrackingOptionID
-WHERE category_options.Name = '" . $current_title . "'
+LEFT JOIN xero_bank_feed as bank_feed ON (exp.Reference = '' and convert(bank_feed.Date,DATE) = convert(exp.Date,DATE) 
+and ABS(bank_feed.Amount) = exp.Total) or (bank_feed.Reference = exp.Reference 
+AND convert(bank_feed.Date,DATE) = convert(exp.Date,DATE))
+WHERE category_options.Name = '" . $current_title . "' AND category_options.TenantId IN ($ten_string_val)
 order by exp.Date ASC";
-$money_query = $wpdb->get_results($sql);
+$money_query = $wpdb->get_results($money_sql);
 
 $templateData = array();
 
@@ -149,7 +188,7 @@ LEFT JOIN xero_expense_lineitem as lineitem ON lineitem.LineItemID = item_tracki
 LEFT JOIN xero_accounts as accounts ON accounts.code = lineitem.AccountCode 
 LEFT JOIN xero_expense as expense ON expense.BankTransactionID = lineitem.BankTransactionID
 LEFT JOIN xero_tracking_category_options as category_options ON category_options.TrackingOptionID = item_tracking.TrackingOptionID
-WHERE category_options.Name= '" . $current_title . "' AND expense.Type ='SPEND'  GROUP BY accounts.Name) 
+WHERE category_options.Name= '" . $current_title . "' AND expense.Type ='SPEND' AND expense.TenantId IN ($ten_string_val) GROUP BY accounts.Name) 
 AS temp 
 LEFT JOIN xero_score_config as config ON config.name = temp.Name 
 LEFT JOIN xero_score_config as score ON score.id = config.parent_id 
@@ -158,7 +197,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
 ?>
 
 <!-- Code to add color classes if any file required action [END] -->
-
 
 <div class="main-container overflow" data-user-id="<?php echo get_current_user_id(); ?>"
      data-post-id="<?php echo get_the_id(); ?>">
@@ -879,12 +917,13 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                             <table class="table table-condensed">
                                                 <thead>
                                                 <tr>
-                                                    <th style="width:15%;">Expense</th>
-                                                    <th style="width:10%;">Amount</th>
-                                                    <th style="width:10%;">GST</th>
-                                                    <th style="width:10%;">Date</th>
-                                                    <th style="width:12%;">Paid to</th>
-                                                    <th style="width:50%;">Notes</th>
+                                                    <th style="width:16%;">Expense</th>
+                                                    <th style="width:25%;">Reference</th>
+                                                    <th style="width:8%;">Amount</th>
+                                                    <th style="width:8%;">GST</th>
+                                                    <th style="width:8%;">Date</th>
+                                                    <th style="width:10%;">Paid to</th>
+                                                    <th style="width:25%;">Notes</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -929,17 +968,18 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                                                     $value = number_format($listData->LineAmount, 2, '.', ',');
                                                                                 }
                                                                                 ?>
-                                                                                <td style="width:15%;"><?php echo $listData->ItemCode ? $listData->ItemCode : $listData->Description; ?></td>
-                                                                                <td style="width:10%;"><?php echo $value ? '$ ' . $value : '$ 0.00'; ?> </td>
-                                                                                <td style="width:10%;"><?php echo $listData->TaxAmount ? '$ ' . number_format($listData->TaxAmount, 2, '.', ',') : '$ 0.00'; ?> </td>
-                                                                                <td style="width:10%;">
+                                                                                <td style="width:16%;"><?php echo $listData->ItemCode ? $listData->ItemCode : $listData->Description; ?></td>
+                                                                                <td style="width:25%;"><?php echo $listData->Reference ? $listData->Reference : ''; ?></td>
+                                                                                <td style="width:8%;"><?php echo $value ? '$ ' . $value : '$ 0.00'; ?> </td>
+                                                                                <td style="width:8%;"><?php echo $listData->TaxAmount ? '$ ' . number_format($listData->TaxAmount, 2, '.', ',') : '$ 0.00'; ?> </td>
+                                                                                <td style="width:8%;">
                                                                                     <?php
                                                                                     $date = date_create($listData->Date);
                                                                                     echo date_format($date, "d.m.Y") ? date_format($date, "d.m.Y") : '';
                                                                                     ?>
                                                                                 </td>
-                                                                                <td style="width:12%;"><?php echo $listData->name ? $listData->name : ''; ?></td>
-                                                                                <td style="width:50%;"><?php echo $listData->Description ? $listData->Description : ''; ?></td>
+                                                                                <td style="width:10%;"><?php echo $listData->name ? $listData->name : ''; ?></td>
+                                                                                <td style="width:25%;"><?php echo $listData->Description ? $listData->Description : ''; ?></td>
                                                                             </tr>
                                                                             <?php ?>
                                                                         <?php }
@@ -952,18 +992,17 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                     <?php }
                                                 } ?>
                                                 <tr class="amount_cal">
-                                                    <td style="width:15%;">
+                                                    <td style="width:16%;"></td>
+                                                    <td style="width:25%;">
                                                         Total costs
                                                     </td>
-                                                    <td style="width:10%;">
+                                                    <td style="width:8%;">
                                                         <?php echo $total_amount ? '$ ' . number_format($total_amount, 2, '.', ',') : '$ 0.00'; ?>
                                                     </td>
-                                                    <td style="width:10%;">
-                                                        <?php // echo $gst ? '$' . $gst : '$ 0'; ?>
-                                                    </td>
+                                                    <td style="width:8%;"></td>
+                                                    <td style="width:8%;"></td>
                                                     <td style="width:10%;"></td>
-                                                    <td style="width:12%;"></td>
-                                                    <td style="width:50%;"></td>
+                                                    <td style="width:25%;"></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -1353,7 +1392,7 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                             <?php while (have_rows('admin_scoreboard')): the_row(); ?>
                                                 <?php
                                                 if (count($details_res) > 0) {
-                                                    $loop_data = searchForName(get_sub_field('admin_scoreboard_label'), $details_res);
+                                                    $loop_data = searchForName(trim(get_sub_field('admin_scoreboard_label')), $details_res);
                                                 } else {
                                                     $loop_data = false;
                                                 }

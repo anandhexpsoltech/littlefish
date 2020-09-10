@@ -21,10 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="779520f0-cfa2-463f-9138-13e761e30fa3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" afterPath="" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" afterPath="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,64 +40,9 @@
       <file leaf-file-name="group_59366f36dc2e1.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="126" column="26" lean-forward="false" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="115" column="39" lean-forward="false" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single-client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="926" column="151" lean-forward="true" selection-start-line="926" selection-start-column="84" selection-end-line="926" selection-end-column="151" />
-              <folding>
-                <element signature="n#searchForName#0;n#!!top" expanded="false" />
-                <element signature="e#15017#15777#0#PHP" expanded="false" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#73438#74003#0#PHP" expanded="false" />
-                <element signature="e#74064#74594#0#PHP" expanded="false" />
-                <element signature="e#74655#75177#0#PHP" expanded="false" />
-                <element signature="e#75238#75790#0#PHP" expanded="false" />
-                <element signature="e#75851#76415#0#PHP" expanded="false" />
-                <element signature="e#76476#77022#0#PHP" expanded="false" />
-                <element signature="e#77083#77587#0#PHP" expanded="false" />
-                <element signature="e#77648#78200#0#PHP" expanded="false" />
-                <element signature="e#81229#82649#0#PHP" expanded="false" />
-                <element signature="e#96852#97725#0#PHP" expanded="false" />
-                <marker date="1599487029560" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599487029560" expanded="true" signature="1257:2011" ph="SELECT linei... " />
-                <marker date="1599487029560" expanded="true" signature="1257:2014" ph="SELECT accou... " />
-                <marker date="1599487029560" expanded="true" signature="3171:3328" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599487029560" expanded="true" signature="3413:3477" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599487029560" expanded="true" signature="3560:3667" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599487029560" expanded="true" signature="4762:5607" ph="SELECT sum(t... sum" />
-                <marker date="1599487029560" expanded="true" signature="4829:5441" ph="SELECT sum(l... xero_expense_item_tracking" />
-                <marker date="1599487029560" expanded="true" signature="49068:49132" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599487029560" expanded="true" signature="50829:50964" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599487029560" expanded="true" signature="51514:51670" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599487029560" expanded="true" signature="53659:53723" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599487029560" expanded="true" signature="53896:54003" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-                <marker date="1599487029560" expanded="true" signature="59366:59478" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,40 +50,105 @@
       <file leaf-file-name="template-overview.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="134" column="81" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="329" selection-end-column="22" />
+            <state relative-caret-position="2537">
+              <caret line="309" column="70" lean-forward="true" selection-start-line="309" selection-start-column="70" selection-end-line="309" selection-end-column="70" />
               <folding>
-                <element signature="e#1422#1585#0#PHP" expanded="false" />
-                <element signature="e#2628#2699#0#HTML" expanded="true" />
-                <element signature="e#2902#3178#0#HTML" expanded="false" />
-                <element signature="e#3203#3476#0#HTML" expanded="false" />
-                <element signature="e#8812#9137#0#HTML" expanded="false" />
-                <element signature="e#9480#18454#0#HTML" expanded="false" />
-                <element signature="e#9539#9544#0#PHP" expanded="false" />
-                <element signature="e#9943#9977#0#HTML" expanded="true" />
-                <element signature="e#10036#10070#0#HTML" expanded="true" />
-                <element signature="e#10132#10166#0#HTML" expanded="true" />
-                <element signature="e#10230#10256#0#HTML" expanded="true" />
-                <element signature="e#10316#10342#0#HTML" expanded="true" />
-                <element signature="e#10403#10429#0#HTML" expanded="true" />
-                <element signature="e#10491#10516#0#HTML" expanded="true" />
-                <element signature="e#11598#12146#0#HTML" expanded="false" />
-                <element signature="e#12306#17043#0#HTML" expanded="false" />
-                <element signature="e#12985#13082#0#PHP" expanded="false" />
-                <element signature="e#13549#16705#0#HTML" expanded="false" />
-                <element signature="e#13630#13664#0#HTML" expanded="true" />
-                <element signature="e#14236#14270#0#HTML" expanded="true" />
-                <element signature="e#14385#14419#0#HTML" expanded="true" />
-                <element signature="e#14537#14562#0#HTML" expanded="true" />
-                <element signature="e#15090#15115#0#HTML" expanded="true" />
-                <element signature="e#15643#15668#0#HTML" expanded="true" />
-                <element signature="e#16148#16173#0#HTML" expanded="true" />
-                <element signature="e#17355#18124#0#HTML" expanded="false" />
-                <element signature="e#18528#19848#0#HTML" expanded="false" />
-                <element signature="e#19853#20591#0#HTML" expanded="false" />
-                <marker date="1599488308722" expanded="true" signature="433:1349" ph="SELECT categ... " />
-                <marker date="1599488308722" expanded="true" signature="1619:2377" ph="SELECT categ... xero_expense" />
+                <element signature="e#73#268#0#PHP" expanded="false" />
+                <element signature="e#945#950#0#PHP" expanded="false" />
+                <element signature="e#2403#2650#0#PHP" expanded="false" />
+                <element signature="e#7222#7919#0#PHP" expanded="false" />
+                <element signature="e#8146#10798#0#PHP" expanded="false" />
+                <element signature="e#8393#8934#0#PHP" expanded="false" />
+                <element signature="e#15762#15859#0#PHP" expanded="false" />
+                <element signature="e#21333#22653#0#HTML" expanded="false" />
+                <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+                <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+                <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+                <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+                <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single-client.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="96" column="68" lean-forward="false" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
+              <folding>
+                <element signature="n#searchForName#0;n#!!top" expanded="false" />
+                <element signature="e#770#964#0#PHP" expanded="false" />
+                <element signature="e#1900#2147#0#PHP" expanded="false" />
+                <element signature="e#3328#3471#0#PHP" expanded="false" />
+                <element signature="e#3549#3625#0#PHP" expanded="false" />
+                <element signature="e#4580#4936#0#PHP" expanded="false" />
+                <element signature="e#4941#5975#0#PHP" expanded="false" />
+                <element signature="e#4970#5969#0#PHP" expanded="false" />
+                <element signature="e#5063#5852#0#PHP" expanded="false" />
+                <element signature="e#16300#17060#0#PHP" expanded="false" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#6;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#74908#75473#0#PHP" expanded="false" />
+                <element signature="e#75534#76064#0#PHP" expanded="false" />
+                <element signature="e#76125#76647#0#PHP" expanded="false" />
+                <element signature="e#76708#77260#0#PHP" expanded="false" />
+                <element signature="e#77321#77885#0#PHP" expanded="false" />
+                <element signature="e#77946#78492#0#PHP" expanded="false" />
+                <element signature="e#78553#79057#0#PHP" expanded="false" />
+                <element signature="e#79118#79670#0#PHP" expanded="false" />
+                <element signature="e#79787#81058#0#PHP" expanded="false" />
+                <element signature="e#80771#81058#0#PHP" expanded="false" />
+                <element signature="e#81116#82641#0#PHP" expanded="false" />
+                <element signature="e#82699#84119#0#PHP" expanded="false" />
+                <element signature="e#84177#85916#0#PHP" expanded="false" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#98322#99195#0#PHP" expanded="false" />
+                <marker date="1599719848217" expanded="true" signature="1459:1594" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599719848217" expanded="true" signature="1696:1771" ph="SELECT `tena... xero_tenants" />
+                <marker date="1599719848217" expanded="true" signature="2163:3248" ph="SELECT linei... " />
+                <marker date="1599719848217" expanded="true" signature="2163:3251" ph="SELECT accou... " />
+                <marker date="1599719848217" expanded="true" signature="4414:4571" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599719848217" expanded="true" signature="4656:4720" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+                <marker date="1599719848217" expanded="true" signature="4803:4910" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+                <marker date="1599719848217" expanded="true" signature="6005:6891" ph="SELECT sum(t... sum" />
+                <marker date="1599719848217" expanded="true" signature="6072:6725" ph="SELECT sum(l... xero_expense_item_tracking" />
+                <marker date="1599719848217" expanded="true" signature="50532:50596" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599719848217" expanded="true" signature="52293:52428" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599719848217" expanded="true" signature="52978:53134" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599719848217" expanded="true" signature="55123:55187" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+                <marker date="1599719848217" expanded="true" signature="55360:55467" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+                <marker date="1599719848217" expanded="true" signature="60830:60942" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,22 +156,9 @@
       <file leaf-file-name="loop-clients.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="61" column="52" lean-forward="false" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+            <state relative-caret-position="153">
+              <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#div#0;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#1;n#section#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#1;n#section#0;n#!!top" expanded="false" />
                 <element signature="e#2229#2586#0#PHP" expanded="false" />
                 <element signature="e#2601#2970#0#PHP" expanded="false" />
                 <element signature="e#2985#3350#0#PHP" expanded="false" />
@@ -172,50 +170,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.htaccess">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="1540" column="5" lean-forward="false" selection-start-line="1540" selection-start-column="5" selection-end-line="1540" selection-end-column="5" />
               <folding>
-                <marker date="1598434095441" expanded="true" signature="244:465" ph="&lt;IfModule mod_rewrite.c&gt;" />
+                <element signature="e#6#111#0#PHP" expanded="true" />
+                <element signature="e#253#310#0#PHP" expanded="false" />
+                <element signature="e#312#1376#0#PHP" expanded="false" />
+                <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+                <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+                <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+                <element signature="e#76097#76386#0#PHP" expanded="false" />
+                <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+                <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+                <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+                <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+                <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+                <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+                <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+                <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+                <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+                <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+                <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+                <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+                <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+                <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+                <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+                <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="708" column="36" lean-forward="false" selection-start-line="708" selection-start-column="36" selection-end-line="708" selection-end-column="36" />
-              <folding>
-                <element signature="e#28924#29755#0#PHP" expanded="false" />
-                <element signature="e#29767#30087#0#PHP" expanded="false" />
-                <element signature="e#35156#35448#0#PHP" expanded="false" />
-                <element signature="e#36328#36774#0#PHP" expanded="false" />
-                <element signature="e#38080#38472#0#PHP" expanded="false" />
-                <element signature="e#71075#71364#0#PHP" expanded="false" />
-                <element signature="e#71746#72035#0#PHP" expanded="false" />
-                <marker date="1599483155760" expanded="true" signature="44823:44972" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599483155760" expanded="true" signature="46577:46613" ph="..." />
-                <marker date="1599483155760" expanded="true" signature="47591:47627" ph="..." />
-                <marker date="1599483155760" expanded="true" signature="49093:49129" ph="..." />
-                <marker date="1599483155760" expanded="true" signature="50719:50830" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
-                <marker date="1599483155760" expanded="true" signature="56592:56743" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-                <marker date="1599483155760" expanded="true" signature="57090:57156" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-                <marker date="1599483155760" expanded="true" signature="58115:58181" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-                <marker date="1599483155760" expanded="true" signature="65453:65521" ph="SELECT `Acce... xero_settings" />
-                <marker date="1599483155760" expanded="true" signature="67405:67432" ph="DELETE FROM `xero_accounts`... " />
-                <marker date="1599483155760" expanded="true" signature="67470:67498" ph="DELETE FROM `xero_bank_feed`... " />
-                <marker date="1599483155760" expanded="true" signature="67536:67562" ph="DELETE FROM `xero_contact`... " />
-                <marker date="1599483155760" expanded="true" signature="67600:67626" ph="DELETE FROM `xero_expense`... " />
-                <marker date="1599483155760" expanded="true" signature="67664:67704" ph="DELETE FROM `xero_expense_item_tracking`... " />
-                <marker date="1599483155760" expanded="true" signature="67742:67777" ph="DELETE FROM `xero_expense_lineitem`... " />
-                <marker date="1599483155760" expanded="true" signature="67815:67839" ph="DELETE FROM `xero_token`... " />
-                <marker date="1599483155760" expanded="true" signature="69967:70035" ph="SELECT `Acce... xero_settings" />
-                <marker date="1599483155760" expanded="true" signature="70847:70892" ph="SELECT `tena... xero_tenants" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,23 +226,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabs tabs_default</find>
-      <find>$details_res</find>
-      <find>tool</find>
-      <find>Facebook profile URL</find>
-      <find>client_id</find>
-      <find>$current_custom_user</find>
-      <find>1509</find>
       <find>field_597f3a9afa683</find>
       <find>client</find>
-      <find>fund</find>
       <find>group_5f521a087d742</find>
       <find>testimonial</find>
       <find>cr</find>
       <find>$listDatas</find>
       <find>funds</find>
-      <find>$templateData</find>
       <find>Option</find>
+      <find>var</find>
+      <find>resr</find>
+      <find>Funds Op</find>
+      <find>var_d</find>
+      <find>the_title(</find>
+      <find>text</find>
+      <find>Funds Selection</find>
+      <find>field_5f55ec4ce0351</find>
+      <find>$result</find>
+      <find>uncategorised</find>
+      <find>$bank_feed_sql</find>
+      <find>tena</find>
+      <find>$ten_string_val</find>
+      <find>$organisation_col</find>
+      <find>$project_string_val</find>
+      <find>$details_res</find>
+      <find>$detail_sql</find>
+      <find>$templateData</find>
+      <find>Bank feed</find>
+      <find>fund</find>
+      <find>create_post_type_html5</find>
+      <find>expense</find>
     </findStrings>
     <dirStrings>
       <dir>E:\xampp\htdocs\littlefish\wp-content\themes\custom-theme\acf-json</dir>
@@ -260,13 +268,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5930250347d31.json" />
         <option value="$PROJECT_DIR$/wp-config.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f55ec22052ce.json" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/style.css" />
+        <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/header.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php" />
@@ -280,7 +289,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -302,8 +311,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,18 +336,12 @@
               <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="custom-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="littlefish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="littlefish" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="custom-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="acf-json" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -401,18 +402,22 @@
       <workItem from="1599021044388" duration="9594000" />
       <workItem from="1599109083287" duration="28229000" />
       <workItem from="1599195200640" duration="20199000" />
-      <workItem from="1599448831764" duration="25662000" />
+      <workItem from="1599448831764" duration="26312000" />
+      <workItem from="1599540268709" duration="12341000" />
+      <workItem from="1599626716256" duration="13609000" />
+      <workItem from="1599648497475" duration="6838000" />
+      <workItem from="1599713292107" duration="7479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74090000" />
+    <option name="totallyTimeSpent" value="115007000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.029500756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -473,97 +478,294 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1422#1585#0#PHP" expanded="false" />
-            <element signature="e#2628#2699#0#HTML" expanded="true" />
-            <element signature="e#2902#3178#0#HTML" expanded="false" />
-            <element signature="e#3203#3476#0#HTML" expanded="false" />
-            <element signature="e#8812#9137#0#HTML" expanded="false" />
-            <element signature="e#9480#18454#0#HTML" expanded="false" />
-            <element signature="e#9539#9544#0#PHP" expanded="false" />
-            <element signature="e#9943#9977#0#HTML" expanded="true" />
-            <element signature="e#10036#10070#0#HTML" expanded="true" />
-            <element signature="e#10132#10166#0#HTML" expanded="true" />
-            <element signature="e#10230#10256#0#HTML" expanded="true" />
-            <element signature="e#10316#10342#0#HTML" expanded="true" />
-            <element signature="e#10403#10429#0#HTML" expanded="true" />
-            <element signature="e#10491#10516#0#HTML" expanded="true" />
-            <element signature="e#11598#12146#0#HTML" expanded="false" />
-            <element signature="e#12306#17043#0#HTML" expanded="false" />
-            <element signature="e#12985#13082#0#PHP" expanded="false" />
-            <element signature="e#13549#16705#0#HTML" expanded="false" />
-            <element signature="e#13630#13664#0#HTML" expanded="true" />
-            <element signature="e#14236#14270#0#HTML" expanded="true" />
-            <element signature="e#14385#14419#0#HTML" expanded="true" />
-            <element signature="e#14537#14562#0#HTML" expanded="true" />
-            <element signature="e#15090#15115#0#HTML" expanded="true" />
-            <element signature="e#15643#15668#0#HTML" expanded="true" />
-            <element signature="e#16148#16173#0#HTML" expanded="true" />
-            <element signature="e#17355#18124#0#HTML" expanded="false" />
-            <element signature="e#18528#19848#0#HTML" expanded="false" />
-            <element signature="e#19853#20591#0#HTML" expanded="false" />
-            <marker date="1599488308722" expanded="true" signature="433:1349" ph="SELECT categ... " />
-            <marker date="1599488308722" expanded="true" signature="1619:2377" ph="SELECT categ... xero_expense" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11713">
-          <caret line="689" column="64" lean-forward="true" selection-start-line="689" selection-start-column="64" selection-end-line="689" selection-end-column="64" />
+        <state relative-caret-position="33405">
+          <caret line="1965" column="51" lean-forward="false" selection-start-line="1965" selection-start-column="51" selection-end-line="1965" selection-end-column="51" />
           <folding>
-            <element signature="e#28924#29755#0#PHP" expanded="false" />
-            <element signature="e#29767#30087#0#PHP" expanded="false" />
-            <element signature="e#35156#35448#0#PHP" expanded="false" />
-            <element signature="e#36328#36774#0#PHP" expanded="false" />
-            <element signature="e#38080#38472#0#PHP" expanded="false" />
-            <element signature="e#71075#71364#0#PHP" expanded="false" />
-            <element signature="e#71746#72035#0#PHP" expanded="false" />
-            <marker date="1599483155760" expanded="true" signature="44823:44972" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599483155760" expanded="true" signature="46577:46613" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="47591:47627" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="49093:49129" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="50719:50830" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
-            <marker date="1599483155760" expanded="true" signature="56592:56743" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599483155760" expanded="true" signature="57090:57156" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-            <marker date="1599483155760" expanded="true" signature="58115:58181" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-            <marker date="1599483155760" expanded="true" signature="65453:65521" ph="SELECT `Acce... xero_settings" />
-            <marker date="1599483155760" expanded="true" signature="67405:67432" ph="DELETE FROM `xero_accounts`... " />
-            <marker date="1599483155760" expanded="true" signature="67470:67498" ph="DELETE FROM `xero_bank_feed`... " />
-            <marker date="1599483155760" expanded="true" signature="67536:67562" ph="DELETE FROM `xero_contact`... " />
-            <marker date="1599483155760" expanded="true" signature="67600:67626" ph="DELETE FROM `xero_expense`... " />
-            <marker date="1599483155760" expanded="true" signature="67664:67704" ph="DELETE FROM `xero_expense_item_tracking`... " />
-            <marker date="1599483155760" expanded="true" signature="67742:67777" ph="DELETE FROM `xero_expense_lineitem`... " />
-            <marker date="1599483155760" expanded="true" signature="67815:67839" ph="DELETE FROM `xero_token`... " />
-            <marker date="1599483155760" expanded="true" signature="69967:70035" ph="SELECT `Acce... xero_settings" />
-            <marker date="1599483155760" expanded="true" signature="70847:70892" ph="SELECT `tena... xero_tenants" />
+            <element signature="e#6#111#0#PHP" expanded="true" />
+            <element signature="e#253#310#0#PHP" expanded="false" />
+            <element signature="e#312#1376#0#PHP" expanded="false" />
+            <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+            <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+            <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+            <element signature="e#76097#76386#0#PHP" expanded="false" />
+            <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+            <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4284">
+          <caret line="252" column="120" lean-forward="false" selection-start-line="252" selection-start-column="113" selection-end-line="252" selection-end-column="120" />
+          <folding>
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="99" column="29" lean-forward="false" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
+          <folding>
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <element signature="n#searchForName#0;n#!!top" expanded="false" />
+            <element signature="e#770#964#0#PHP" expanded="false" />
+            <element signature="e#1900#2147#0#PHP" expanded="false" />
+            <element signature="e#3328#3471#0#PHP" expanded="false" />
+            <element signature="e#3549#3625#0#PHP" expanded="false" />
+            <element signature="e#4580#4936#0#PHP" expanded="false" />
+            <element signature="e#4941#5975#0#PHP" expanded="false" />
+            <element signature="e#4970#5969#0#PHP" expanded="false" />
+            <element signature="e#5063#5852#0#PHP" expanded="false" />
+            <element signature="e#16300#17060#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#74908#75473#0#PHP" expanded="false" />
+            <element signature="e#75534#76064#0#PHP" expanded="false" />
+            <element signature="e#76125#76647#0#PHP" expanded="false" />
+            <element signature="e#76708#77260#0#PHP" expanded="false" />
+            <element signature="e#77321#77885#0#PHP" expanded="false" />
+            <element signature="e#77946#78492#0#PHP" expanded="false" />
+            <element signature="e#78553#79057#0#PHP" expanded="false" />
+            <element signature="e#79118#79670#0#PHP" expanded="false" />
+            <element signature="e#79787#81058#0#PHP" expanded="false" />
+            <element signature="e#80771#81058#0#PHP" expanded="false" />
+            <element signature="e#81116#82641#0#PHP" expanded="false" />
+            <element signature="e#82699#84119#0#PHP" expanded="false" />
+            <element signature="e#84177#85916#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#98322#99195#0#PHP" expanded="false" />
+            <marker date="1599719848217" expanded="true" signature="1459:1594" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="1696:1771" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599719848217" expanded="true" signature="2163:3248" ph="SELECT linei... " />
+            <marker date="1599719848217" expanded="true" signature="2163:3251" ph="SELECT accou... " />
+            <marker date="1599719848217" expanded="true" signature="4414:4571" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="4656:4720" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="4803:4910" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="6005:6891" ph="SELECT sum(t... sum" />
+            <marker date="1599719848217" expanded="true" signature="6072:6725" ph="SELECT sum(l... xero_expense_item_tracking" />
+            <marker date="1599719848217" expanded="true" signature="50532:50596" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52293:52428" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52978:53134" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="55123:55187" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="55360:55467" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="60830:60942" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33405">
+          <caret line="1965" column="51" lean-forward="true" selection-start-line="1965" selection-start-column="51" selection-end-line="1965" selection-end-column="51" />
+          <folding>
+            <element signature="e#6#111#0#PHP" expanded="true" />
+            <element signature="e#253#310#0#PHP" expanded="false" />
+            <element signature="e#312#1376#0#PHP" expanded="false" />
+            <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+            <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+            <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+            <element signature="e#76097#76386#0#PHP" expanded="false" />
+            <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+            <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="126" column="26" lean-forward="false" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15742">
+          <caret line="926" column="151" lean-forward="false" selection-start-line="926" selection-start-column="84" selection-end-line="926" selection-end-column="151" />
+          <folding>
+            <element signature="n#searchForName#0;n#!!top" expanded="false" />
+            <element signature="e#770#964#0#PHP" expanded="false" />
+            <element signature="e#1900#2147#0#PHP" expanded="false" />
+            <element signature="e#3328#3471#0#PHP" expanded="false" />
+            <element signature="e#3549#3625#0#PHP" expanded="false" />
+            <element signature="e#4580#4936#0#PHP" expanded="false" />
+            <element signature="e#4941#5975#0#PHP" expanded="false" />
+            <element signature="e#4970#5969#0#PHP" expanded="false" />
+            <element signature="e#5063#5852#0#PHP" expanded="false" />
+            <element signature="e#16300#17060#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#74908#75473#0#PHP" expanded="false" />
+            <element signature="e#75534#76064#0#PHP" expanded="false" />
+            <element signature="e#76125#76647#0#PHP" expanded="false" />
+            <element signature="e#76708#77260#0#PHP" expanded="false" />
+            <element signature="e#77321#77885#0#PHP" expanded="false" />
+            <element signature="e#77946#78492#0#PHP" expanded="false" />
+            <element signature="e#78553#79057#0#PHP" expanded="false" />
+            <element signature="e#79118#79670#0#PHP" expanded="false" />
+            <element signature="e#79787#81058#0#PHP" expanded="false" />
+            <element signature="e#80771#81058#0#PHP" expanded="false" />
+            <element signature="e#81116#82641#0#PHP" expanded="false" />
+            <element signature="e#82699#84119#0#PHP" expanded="false" />
+            <element signature="e#84177#85916#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#98322#99195#0#PHP" expanded="false" />
+            <marker date="1599719848217" expanded="true" signature="1459:1594" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="1696:1771" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599719848217" expanded="true" signature="2163:3248" ph="SELECT linei... " />
+            <marker date="1599719848217" expanded="true" signature="2163:3251" ph="SELECT accou... " />
+            <marker date="1599719848217" expanded="true" signature="4414:4571" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="4656:4720" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="4803:4910" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="6005:6891" ph="SELECT sum(t... sum" />
+            <marker date="1599719848217" expanded="true" signature="6072:6725" ph="SELECT sum(l... xero_expense_item_tracking" />
+            <marker date="1599719848217" expanded="true" signature="50532:50596" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52293:52428" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52978:53134" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="55123:55187" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="55360:55467" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="60830:60942" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="52" lean-forward="true" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="52" lean-forward="false" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#section#0;n#!!top" expanded="false" />
             <element signature="e#2229#2586#0#PHP" expanded="false" />
             <element signature="e#2601#2970#0#PHP" expanded="false" />
             <element signature="e#2985#3350#0#PHP" expanded="false" />
@@ -574,12 +776,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12036">
+          <caret line="708" column="36" lean-forward="false" selection-start-line="708" selection-start-column="36" selection-end-line="708" selection-end-column="36" />
           <folding>
-            <element signature="e#1040#1200#0" expanded="false" />
+            <element signature="e#6#111#0#PHP" expanded="true" />
+            <element signature="e#253#310#0#PHP" expanded="false" />
+            <element signature="e#312#1376#0#PHP" expanded="false" />
+            <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+            <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+            <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+            <element signature="e#76097#76386#0#PHP" expanded="false" />
+            <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+            <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
           </folding>
         </state>
       </provider>
@@ -589,36 +844,90 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1422#1585#0#PHP" expanded="false" />
-            <element signature="e#2628#2699#0#HTML" expanded="true" />
-            <element signature="e#2902#3178#0#HTML" expanded="false" />
-            <element signature="e#3203#3476#0#HTML" expanded="false" />
-            <element signature="e#8812#9137#0#HTML" expanded="false" />
-            <element signature="e#9480#18454#0#HTML" expanded="false" />
-            <element signature="e#9539#9544#0#PHP" expanded="false" />
-            <element signature="e#9943#9977#0#HTML" expanded="true" />
-            <element signature="e#10036#10070#0#HTML" expanded="true" />
-            <element signature="e#10132#10166#0#HTML" expanded="true" />
-            <element signature="e#10230#10256#0#HTML" expanded="true" />
-            <element signature="e#10316#10342#0#HTML" expanded="true" />
-            <element signature="e#10403#10429#0#HTML" expanded="true" />
-            <element signature="e#10491#10516#0#HTML" expanded="true" />
-            <element signature="e#11598#12146#0#HTML" expanded="false" />
-            <element signature="e#12306#17043#0#HTML" expanded="false" />
-            <element signature="e#12985#13082#0#PHP" expanded="false" />
-            <element signature="e#13549#16705#0#HTML" expanded="false" />
-            <element signature="e#13630#13664#0#HTML" expanded="true" />
-            <element signature="e#14236#14270#0#HTML" expanded="true" />
-            <element signature="e#14385#14419#0#HTML" expanded="true" />
-            <element signature="e#14537#14562#0#HTML" expanded="true" />
-            <element signature="e#15090#15115#0#HTML" expanded="true" />
-            <element signature="e#15643#15668#0#HTML" expanded="true" />
-            <element signature="e#16148#16173#0#HTML" expanded="true" />
-            <element signature="e#17355#18124#0#HTML" expanded="false" />
-            <element signature="e#18528#19848#0#HTML" expanded="false" />
-            <element signature="e#19853#20591#0#HTML" expanded="false" />
-            <marker date="1599488308722" expanded="true" signature="433:1349" ph="SELECT categ... " />
-            <marker date="1599488308722" expanded="true" signature="1619:2377" ph="SELECT categ... xero_expense" />
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11713">
+          <caret line="689" column="64" lean-forward="true" selection-start-line="689" selection-start-column="64" selection-end-line="689" selection-end-column="64" />
+          <folding>
+            <element signature="e#6#111#0#PHP" expanded="true" />
+            <element signature="e#253#310#0#PHP" expanded="false" />
+            <element signature="e#312#1376#0#PHP" expanded="false" />
+            <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+            <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+            <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+            <element signature="e#76097#76386#0#PHP" expanded="false" />
+            <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+            <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="52" lean-forward="true" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+          <folding>
+            <element signature="e#2229#2586#0#PHP" expanded="false" />
+            <element signature="e#2601#2970#0#PHP" expanded="false" />
+            <element signature="e#2985#3350#0#PHP" expanded="false" />
+            <element signature="e#3365#3714#0#PHP" expanded="false" />
+            <element signature="e#3729#4086#0#PHP" expanded="false" />
+            <element signature="e#4101#4446#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
           </folding>
         </state>
       </provider>
@@ -629,49 +938,66 @@
           <caret line="1699" column="61" lean-forward="false" selection-start-line="1699" selection-start-column="61" selection-end-line="1699" selection-end-column="61" />
           <folding>
             <element signature="n#searchForName#0;n#!!top" expanded="false" />
-            <element signature="e#15017#15777#0#PHP" expanded="false" />
+            <element signature="e#770#964#0#PHP" expanded="false" />
+            <element signature="e#1900#2147#0#PHP" expanded="false" />
+            <element signature="e#3328#3471#0#PHP" expanded="false" />
+            <element signature="e#3549#3625#0#PHP" expanded="false" />
+            <element signature="e#4580#4936#0#PHP" expanded="false" />
+            <element signature="e#4941#5975#0#PHP" expanded="false" />
+            <element signature="e#4970#5969#0#PHP" expanded="false" />
+            <element signature="e#5063#5852#0#PHP" expanded="false" />
+            <element signature="e#16300#17060#0#PHP" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#73438#74003#0#PHP" expanded="false" />
-            <element signature="e#74064#74594#0#PHP" expanded="false" />
-            <element signature="e#74655#75177#0#PHP" expanded="false" />
-            <element signature="e#75238#75790#0#PHP" expanded="false" />
-            <element signature="e#75851#76415#0#PHP" expanded="false" />
-            <element signature="e#76476#77022#0#PHP" expanded="false" />
-            <element signature="e#77083#77587#0#PHP" expanded="false" />
-            <element signature="e#77648#78200#0#PHP" expanded="false" />
-            <element signature="e#81229#82649#0#PHP" expanded="false" />
-            <element signature="e#96852#97725#0#PHP" expanded="false" />
-            <marker date="1599487029560" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="1257:2011" ph="SELECT linei... " />
-            <marker date="1599487029560" expanded="true" signature="1257:2014" ph="SELECT accou... " />
-            <marker date="1599487029560" expanded="true" signature="3171:3328" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="3413:3477" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="3560:3667" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="4762:5607" ph="SELECT sum(t... sum" />
-            <marker date="1599487029560" expanded="true" signature="4829:5441" ph="SELECT sum(l... xero_expense_item_tracking" />
-            <marker date="1599487029560" expanded="true" signature="49068:49132" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="50829:50964" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="51514:51670" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="53659:53723" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="53896:54003" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="59366:59478" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <element signature="n#style#0;n#td#6;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#74908#75473#0#PHP" expanded="false" />
+            <element signature="e#75534#76064#0#PHP" expanded="false" />
+            <element signature="e#76125#76647#0#PHP" expanded="false" />
+            <element signature="e#76708#77260#0#PHP" expanded="false" />
+            <element signature="e#77321#77885#0#PHP" expanded="false" />
+            <element signature="e#77946#78492#0#PHP" expanded="false" />
+            <element signature="e#78553#79057#0#PHP" expanded="false" />
+            <element signature="e#79118#79670#0#PHP" expanded="false" />
+            <element signature="e#79787#81058#0#PHP" expanded="false" />
+            <element signature="e#80771#81058#0#PHP" expanded="false" />
+            <element signature="e#81116#82641#0#PHP" expanded="false" />
+            <element signature="e#82699#84119#0#PHP" expanded="false" />
+            <element signature="e#84177#85916#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#98322#99195#0#PHP" expanded="false" />
+            <marker date="1599719848217" expanded="true" signature="1459:1594" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="1696:1771" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599719848217" expanded="true" signature="2163:3248" ph="SELECT linei... " />
+            <marker date="1599719848217" expanded="true" signature="2163:3251" ph="SELECT accou... " />
+            <marker date="1599719848217" expanded="true" signature="4414:4571" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="4656:4720" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="4803:4910" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="6005:6891" ph="SELECT sum(t... sum" />
+            <marker date="1599719848217" expanded="true" signature="6072:6725" ph="SELECT sum(l... xero_expense_item_tracking" />
+            <marker date="1599719848217" expanded="true" signature="50532:50596" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52293:52428" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52978:53134" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="55123:55187" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="55360:55467" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="60830:60942" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
           </folding>
         </state>
       </provider>
@@ -679,13 +1005,6 @@
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
-          <caret line="151" column="17" lean-forward="false" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
           <caret line="151" column="17" lean-forward="false" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
         </state>
       </provider>
@@ -781,21 +1100,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1598434095441" expanded="true" signature="244:465" ph="&lt;IfModule mod_rewrite.c&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,88 +1139,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f55ec22052ce.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="e#1040#1200#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f55ec22052ce.json" />
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_5f521a087d742.json" />
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/acf-json/group_59366f36dc2e1.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="126" column="26" lean-forward="false" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="115" column="39" lean-forward="false" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="708" column="36" lean-forward="false" selection-start-line="708" selection-start-column="36" selection-end-line="708" selection-end-column="36" />
+        <state relative-caret-position="323">
+          <caret line="1540" column="5" lean-forward="false" selection-start-line="1540" selection-start-column="5" selection-end-line="1540" selection-end-column="5" />
           <folding>
-            <element signature="e#28924#29755#0#PHP" expanded="false" />
-            <element signature="e#29767#30087#0#PHP" expanded="false" />
-            <element signature="e#35156#35448#0#PHP" expanded="false" />
-            <element signature="e#36328#36774#0#PHP" expanded="false" />
-            <element signature="e#38080#38472#0#PHP" expanded="false" />
-            <element signature="e#71075#71364#0#PHP" expanded="false" />
-            <element signature="e#71746#72035#0#PHP" expanded="false" />
-            <marker date="1599483155760" expanded="true" signature="44823:44972" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599483155760" expanded="true" signature="46577:46613" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="47591:47627" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="49093:49129" ph="..." />
-            <marker date="1599483155760" expanded="true" signature="50719:50830" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
-            <marker date="1599483155760" expanded="true" signature="56592:56743" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599483155760" expanded="true" signature="57090:57156" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-            <marker date="1599483155760" expanded="true" signature="58115:58181" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
-            <marker date="1599483155760" expanded="true" signature="65453:65521" ph="SELECT `Acce... xero_settings" />
-            <marker date="1599483155760" expanded="true" signature="67405:67432" ph="DELETE FROM `xero_accounts`... " />
-            <marker date="1599483155760" expanded="true" signature="67470:67498" ph="DELETE FROM `xero_bank_feed`... " />
-            <marker date="1599483155760" expanded="true" signature="67536:67562" ph="DELETE FROM `xero_contact`... " />
-            <marker date="1599483155760" expanded="true" signature="67600:67626" ph="DELETE FROM `xero_expense`... " />
-            <marker date="1599483155760" expanded="true" signature="67664:67704" ph="DELETE FROM `xero_expense_item_tracking`... " />
-            <marker date="1599483155760" expanded="true" signature="67742:67777" ph="DELETE FROM `xero_expense_lineitem`... " />
-            <marker date="1599483155760" expanded="true" signature="67815:67839" ph="DELETE FROM `xero_token`... " />
-            <marker date="1599483155760" expanded="true" signature="69967:70035" ph="SELECT `Acce... xero_settings" />
-            <marker date="1599483155760" expanded="true" signature="70847:70892" ph="SELECT `tena... xero_tenants" />
+            <element signature="e#6#111#0#PHP" expanded="true" />
+            <element signature="e#253#310#0#PHP" expanded="false" />
+            <element signature="e#312#1376#0#PHP" expanded="false" />
+            <element signature="n#custom_sizes#0;n#!!top" expanded="false" />
+            <element signature="n#html5blank_nav#0;n#!!top" expanded="false" />
+            <element signature="n#xero_cron_call#0;n#!!top" expanded="false" />
+            <element signature="e#76097#76386#0#PHP" expanded="false" />
+            <marker date="1599716048855" expanded="true" signature="39097:39187" ph="SELECT COUNT... wp_hjsfh3_wc_users_voted" />
+            <marker date="1599716048855" expanded="true" signature="45699:45848" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="47873:47909" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="49031:49067" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="50926:50962" ph="..." />
+            <marker date="1599716048855" expanded="true" signature="52939:53050" ph="SELECT * FRO... ${$wpdb-&gt;prefix}uploaded_doc" />
+            <marker date="1599716048855" expanded="true" signature="59807:59958" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599716048855" expanded="true" signature="60341:60407" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="61471:61537" ph="SELECT * FRO... ${$wpdb-&gt;postmeta}" />
+            <marker date="1599716048855" expanded="true" signature="68944:69012" ph="SELECT `Acce... xero_settings" />
+            <marker date="1599716048855" expanded="true" signature="70875:70902" ph="DELETE FROM `xero_accounts`... " />
+            <marker date="1599716048855" expanded="true" signature="70940:70968" ph="DELETE FROM `xero_bank_feed`... " />
+            <marker date="1599716048855" expanded="true" signature="71006:71032" ph="DELETE FROM `xero_contact`... " />
+            <marker date="1599716048855" expanded="true" signature="71070:71096" ph="DELETE FROM `xero_expense`... " />
+            <marker date="1599716048855" expanded="true" signature="71134:71174" ph="DELETE FROM `xero_expense_item_tracking`... " />
+            <marker date="1599716048855" expanded="true" signature="71212:71247" ph="DELETE FROM `xero_expense_lineitem`... " />
+            <marker date="1599716048855" expanded="true" signature="71285:71309" ph="DELETE FROM `xero_token`... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/loop-clients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="61" column="52" lean-forward="false" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+        <state relative-caret-position="153">
+          <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#section#0;n#!!top" expanded="false" />
             <element signature="e#2229#2586#0#PHP" expanded="false" />
             <element signature="e#2601#2970#0#PHP" expanded="false" />
             <element signature="e#2985#3350#0#PHP" expanded="false" />
@@ -929,92 +1226,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/single-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="926" column="151" lean-forward="true" selection-start-line="926" selection-start-column="84" selection-end-line="926" selection-end-column="151" />
+        <state relative-caret-position="398">
+          <caret line="96" column="68" lean-forward="false" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
           <folding>
             <element signature="n#searchForName#0;n#!!top" expanded="false" />
-            <element signature="e#15017#15777#0#PHP" expanded="false" />
+            <element signature="e#770#964#0#PHP" expanded="false" />
+            <element signature="e#1900#2147#0#PHP" expanded="false" />
+            <element signature="e#3328#3471#0#PHP" expanded="false" />
+            <element signature="e#3549#3625#0#PHP" expanded="false" />
+            <element signature="e#4580#4936#0#PHP" expanded="false" />
+            <element signature="e#4941#5975#0#PHP" expanded="false" />
+            <element signature="e#4970#5969#0#PHP" expanded="false" />
+            <element signature="e#5063#5852#0#PHP" expanded="false" />
+            <element signature="e#16300#17060#0#PHP" expanded="false" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#73438#74003#0#PHP" expanded="false" />
-            <element signature="e#74064#74594#0#PHP" expanded="false" />
-            <element signature="e#74655#75177#0#PHP" expanded="false" />
-            <element signature="e#75238#75790#0#PHP" expanded="false" />
-            <element signature="e#75851#76415#0#PHP" expanded="false" />
-            <element signature="e#76476#77022#0#PHP" expanded="false" />
-            <element signature="e#77083#77587#0#PHP" expanded="false" />
-            <element signature="e#77648#78200#0#PHP" expanded="false" />
-            <element signature="e#81229#82649#0#PHP" expanded="false" />
-            <element signature="e#96852#97725#0#PHP" expanded="false" />
-            <marker date="1599487029560" expanded="true" signature="1054:1189" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="1257:2011" ph="SELECT linei... " />
-            <marker date="1599487029560" expanded="true" signature="1257:2014" ph="SELECT accou... " />
-            <marker date="1599487029560" expanded="true" signature="3171:3328" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="3413:3477" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="3560:3667" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="4762:5607" ph="SELECT sum(t... sum" />
-            <marker date="1599487029560" expanded="true" signature="4829:5441" ph="SELECT sum(l... xero_expense_item_tracking" />
-            <marker date="1599487029560" expanded="true" signature="49068:49132" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="50829:50964" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="51514:51670" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
-            <marker date="1599487029560" expanded="true" signature="53659:53723" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="53896:54003" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
-            <marker date="1599487029560" expanded="true" signature="59366:59478" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <element signature="n#style#0;n#td#6;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#74908#75473#0#PHP" expanded="false" />
+            <element signature="e#75534#76064#0#PHP" expanded="false" />
+            <element signature="e#76125#76647#0#PHP" expanded="false" />
+            <element signature="e#76708#77260#0#PHP" expanded="false" />
+            <element signature="e#77321#77885#0#PHP" expanded="false" />
+            <element signature="e#77946#78492#0#PHP" expanded="false" />
+            <element signature="e#78553#79057#0#PHP" expanded="false" />
+            <element signature="e#79118#79670#0#PHP" expanded="false" />
+            <element signature="e#79787#81058#0#PHP" expanded="false" />
+            <element signature="e#80771#81058#0#PHP" expanded="false" />
+            <element signature="e#81116#82641#0#PHP" expanded="false" />
+            <element signature="e#82699#84119#0#PHP" expanded="false" />
+            <element signature="e#84177#85916#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#98322#99195#0#PHP" expanded="false" />
+            <marker date="1599719848217" expanded="true" signature="1459:1594" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="1696:1771" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599719848217" expanded="true" signature="2163:3248" ph="SELECT linei... " />
+            <marker date="1599719848217" expanded="true" signature="2163:3251" ph="SELECT accou... " />
+            <marker date="1599719848217" expanded="true" signature="4414:4571" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="4656:4720" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="4803:4910" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="6005:6891" ph="SELECT sum(t... sum" />
+            <marker date="1599719848217" expanded="true" signature="6072:6725" ph="SELECT sum(l... xero_expense_item_tracking" />
+            <marker date="1599719848217" expanded="true" signature="50532:50596" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52293:52428" ph="SELECT * FRO... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="52978:53134" ph="SELECT meta_... ${$wpdb-&gt;prefix}postmeta" />
+            <marker date="1599719848217" expanded="true" signature="55123:55187" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="55360:55467" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
+            <marker date="1599719848217" expanded="true" signature="60830:60942" ph="SELECT * FRO... ${$wpdb-&gt;prefix}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/custom-theme/template-overview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="134" column="81" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="329" selection-end-column="22" />
+        <state relative-caret-position="2537">
+          <caret line="309" column="70" lean-forward="true" selection-start-line="309" selection-start-column="70" selection-end-line="309" selection-end-column="70" />
           <folding>
-            <element signature="e#1422#1585#0#PHP" expanded="false" />
-            <element signature="e#2628#2699#0#HTML" expanded="true" />
-            <element signature="e#2902#3178#0#HTML" expanded="false" />
-            <element signature="e#3203#3476#0#HTML" expanded="false" />
-            <element signature="e#8812#9137#0#HTML" expanded="false" />
-            <element signature="e#9480#18454#0#HTML" expanded="false" />
-            <element signature="e#9539#9544#0#PHP" expanded="false" />
-            <element signature="e#9943#9977#0#HTML" expanded="true" />
-            <element signature="e#10036#10070#0#HTML" expanded="true" />
-            <element signature="e#10132#10166#0#HTML" expanded="true" />
-            <element signature="e#10230#10256#0#HTML" expanded="true" />
-            <element signature="e#10316#10342#0#HTML" expanded="true" />
-            <element signature="e#10403#10429#0#HTML" expanded="true" />
-            <element signature="e#10491#10516#0#HTML" expanded="true" />
-            <element signature="e#11598#12146#0#HTML" expanded="false" />
-            <element signature="e#12306#17043#0#HTML" expanded="false" />
-            <element signature="e#12985#13082#0#PHP" expanded="false" />
-            <element signature="e#13549#16705#0#HTML" expanded="false" />
-            <element signature="e#13630#13664#0#HTML" expanded="true" />
-            <element signature="e#14236#14270#0#HTML" expanded="true" />
-            <element signature="e#14385#14419#0#HTML" expanded="true" />
-            <element signature="e#14537#14562#0#HTML" expanded="true" />
-            <element signature="e#15090#15115#0#HTML" expanded="true" />
-            <element signature="e#15643#15668#0#HTML" expanded="true" />
-            <element signature="e#16148#16173#0#HTML" expanded="true" />
-            <element signature="e#17355#18124#0#HTML" expanded="false" />
-            <element signature="e#18528#19848#0#HTML" expanded="false" />
-            <element signature="e#19853#20591#0#HTML" expanded="false" />
-            <marker date="1599488308722" expanded="true" signature="433:1349" ph="SELECT categ... " />
-            <marker date="1599488308722" expanded="true" signature="1619:2377" ph="SELECT categ... xero_expense" />
+            <element signature="e#73#268#0#PHP" expanded="false" />
+            <element signature="e#945#950#0#PHP" expanded="false" />
+            <element signature="e#2403#2650#0#PHP" expanded="false" />
+            <element signature="e#7222#7919#0#PHP" expanded="false" />
+            <element signature="e#8146#10798#0#PHP" expanded="false" />
+            <element signature="e#8393#8934#0#PHP" expanded="false" />
+            <element signature="e#15762#15859#0#PHP" expanded="false" />
+            <element signature="e#21333#22653#0#HTML" expanded="false" />
+            <marker date="1599721090888" expanded="true" signature="2199:2274" ph="SELECT `tena... xero_tenants" />
+            <marker date="1599721090888" expanded="true" signature="3155:4070" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4071" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="3155:4087" ph="SELECT categ... " />
+            <marker date="1599721090888" expanded="true" signature="4216:4990" ph="SELECT categ... xero_expense" />
           </folding>
         </state>
       </provider>
