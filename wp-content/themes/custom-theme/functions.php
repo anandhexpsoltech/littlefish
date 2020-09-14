@@ -1936,6 +1936,29 @@ function update_viewed_comment() {
 add_action( 'wpb_custom_cron', 'xero_cron_call');
 
 function xero_cron_call(){
+//    wp_mail( '', 'Automatic email', 'Automatic scheduled email from WordPress to test cron');
+}
+
+add_action( 'is_add_every_five_minutes', 'every_five_minutes_event_func' );
+
+add_filter( 'cron_schedules', 'is_add_every_five_minutes' );
+
+function is_add_every_five_minutes($schedules) {
+    $schedules['every_five_minutes'] = array(
+        'interval'  => 300,
+        'display'   => __( 'Every 5 Minutes', 'LittleFish' )
+    );
+    return $schedules;
+}
+
+// Schedule an action if it's not already scheduled
+if (!wp_next_scheduled( 'is_add_every_five_minutes')) {
+    wp_schedule_event(time(), 'every_five_minutes', 'is_add_every_five_minutes');
+}
+
+// Hook into that action that'll fire every five minutes
+add_action( 'is_add_every_five_minutes', 'every_five_minutes_event_func' );
+function every_five_minutes_event_func() {
     global $wpdb;
     $result = $wpdb->get_results("SELECT `AccessToken` FROM `xero_settings` WHERE `UserName` = 'Admin' ", ARRAY_A);
     $AccessToken = $result[0]['AccessToken'];
