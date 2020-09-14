@@ -284,7 +284,10 @@ body.fullwidth .wrapper {
 }
 
 .error_high {
-	color: red;
+	color: #d26566;
+}
+.success_high {
+	color: #70aa91;
 }
 
 .logos {

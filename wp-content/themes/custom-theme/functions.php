@@ -706,7 +706,7 @@ function create_post_type_html5()
     register_post_type('funds',
         array(
             'labels' => array(
-                'name' => __('Fund Lists', 'html5blank'),
+                'name' => __('Bank Accounts', 'html5blank'),
                 'singular_name' => __('Fund', 'html5blank'),
                 'add_new' => __('Add New', 'html5blank'),
                 'add_new_item' => __('Add New Fund', 'html5blank'),
@@ -1865,7 +1865,9 @@ function xero_disconnect(){
     $wpdb->get_results("DELETE FROM `xero_expense`;", ARRAY_A);
     $wpdb->get_results("DELETE FROM `xero_expense_item_tracking`;", ARRAY_A);
     $wpdb->get_results("DELETE FROM `xero_expense_lineitem`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_tenants`;", ARRAY_A);
     $wpdb->get_results("DELETE FROM `xero_token`;", ARRAY_A);
+    $wpdb->get_results("DELETE FROM `xero_tracking_category_options`;", ARRAY_A);
     echo 'records_cleared';
     die;
 }

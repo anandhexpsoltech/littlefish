@@ -113,7 +113,7 @@
         },
         {
             "key": "field_5f55ec4ce0351",
-            "label": "Funds Selection",
+            "label": "Bank Selection",
             "name": "funds_link",
             "type": "post_object",
             "instructions": "",

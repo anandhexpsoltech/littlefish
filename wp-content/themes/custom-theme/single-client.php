@@ -60,18 +60,38 @@ $current_title = esc_html(get_the_title());
 $tenantSql = "SELECT `tenantId` FROM `xero_tenants` WHERE tenantName IN ($org_string_val)";
 $tenantRes = $wpdb->get_results($tenantSql,ARRAY_A);
 
-$ten_string_val='';
+$money_extra_sql='';
+$detail_extra_sql='';
 $tenant_count = 0;
+$user_filter_sql = '';
+$noOrgData = false;
 $tenant_len = count($tenantRes);
 foreach ($tenantRes as $key => $ten_data){
     $ten_data = $ten_data['tenantId'];
     if($tenant_count == $tenant_len - 1) {
         $comm='';
-    }else{
+    }
+    else{
         $comm=',';
     }
     $ten_string_val.="'".$ten_data."'".$comm;
     $tenant_count++;
+}
+
+//checking user role
+$user = new WP_User($current_custom_user);
+if(!empty($user) && $user){
+    if(wp_sprintf_l( '%l', $user->roles ) == 'administrator'){
+        $money_extra_sql = '';
+        $detail_extra_sql = '';
+    }
+    else{
+        $money_extra_sql = "AND category_options.TenantId IN ($ten_string_val)";
+        $detail_extra_sql = "AND expense.TenantId IN ($ten_string_val)";
+        if(empty($ten_string_val)){
+            $noOrgData = true;
+        }
+    }
 }
 
 $money_sql = "SELECT 
@@ -94,7 +114,7 @@ LEFT JOIN xero_tracking_category_options as category_options ON category_options
 LEFT JOIN xero_bank_feed as bank_feed ON (exp.Reference = '' and convert(bank_feed.Date,DATE) = convert(exp.Date,DATE) 
 and ABS(bank_feed.Amount) = exp.Total) or (bank_feed.Reference = exp.Reference 
 AND convert(bank_feed.Date,DATE) = convert(exp.Date,DATE))
-WHERE category_options.Name = '" . $current_title . "' AND category_options.TenantId IN ($ten_string_val)
+WHERE category_options.Name = '" . $current_title . "' $money_extra_sql
 order by exp.Date ASC";
 $money_query = $wpdb->get_results($money_sql);
 
@@ -103,8 +123,6 @@ $templateData = array();
 foreach ($money_query as $money_key => $money_value) {
     $templateData[$money_value->date_year][$money_value->date_month][] = $money_value;
 }
-
-//var_dump($templateData);
 
 foreach ($get_added_files as $added_file) {
     if (is_super_admin($currentuserid)) {
@@ -188,12 +206,13 @@ LEFT JOIN xero_expense_lineitem as lineitem ON lineitem.LineItemID = item_tracki
 LEFT JOIN xero_accounts as accounts ON accounts.code = lineitem.AccountCode 
 LEFT JOIN xero_expense as expense ON expense.BankTransactionID = lineitem.BankTransactionID
 LEFT JOIN xero_tracking_category_options as category_options ON category_options.TrackingOptionID = item_tracking.TrackingOptionID
-WHERE category_options.Name= '" . $current_title . "' AND expense.Type ='SPEND' AND expense.TenantId IN ($ten_string_val) GROUP BY accounts.Name) 
+WHERE category_options.Name= '" . $current_title . "' AND expense.Type ='SPEND' $detail_extra_sql GROUP BY accounts.Name) 
 AS temp 
 LEFT JOIN xero_score_config as config ON config.name = temp.Name 
 LEFT JOIN xero_score_config as score ON score.id = config.parent_id 
 GROUP BY score.name";
 $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
+
 ?>
 
 <!-- Code to add color classes if any file required action [END] -->
@@ -215,22 +234,18 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                     <h1 class="title">
                         <a class="fa fa-bars size-12" href="<?php bloginfo('url'); ?>/my-projects/"></a>
                         <span>
-                                    <?php the_title(); ?>
-                            </span>
-
+                                <?php the_title(); ?>
+                           </span>
                         <?php if (get_field('custom_link')): ?>
 
                             <a class="planning" href="<?php the_field('custom_link'); ?>" target="_blank"></a>
 
                         <?php endif; ?>
-
-
                         <?php if (get_field('custom_link_2')): ?>
 
                             <a class="build" href="<?php the_field('custom_link_2'); ?>" target="_blank"></a>
 
                         <?php endif; ?>
-
                     </h1>
                     <div class="project-status overflow">
 
@@ -444,9 +459,7 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                         <ul class="horizontal">
                             <li>
                                 <a href="#tab-1" class="normal">
-
                                     <span class="fa fa-comments size-45 grey"></span>
-
 
                                     <?php _e('Chat', 'html5blank'); ?>
 
@@ -1339,7 +1352,6 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                         <div id="tab-5" class="tab">
 
                             <div class="score-wrap">
-
                                 <div class="float-right">
 
                                     <?php if (get_field('admin_timer')): ?>
@@ -1351,43 +1363,22 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                     <?php endif; ?>
 
                                 </div>
-
-
                                 <div class="float-left">
-
                                     <?php if (have_rows('admin_scoreboard')): ?>
-
                                         <div class="scoreboard">
-
                                             <div class="row top">
-
                                                 <div class="cell blue">
-
                                                     &nbsp;
-
                                                 </div>
-
-
                                                 <div class="cell grey">
-
                                                     <?php _e('Budget', 'html5blank'); ?>
-
                                                 </div>
-
-
                                                 <div class="cell">
-
                                                     <?php _e('Actual', 'html5blank'); ?>
-
                                                 </div>
-
-
                                                 <div class="cell">
-
                                                     <?php _e('Variance', 'html5blank'); ?>
-
                                                 </div>
-
                                             </div>
                                             <?php while (have_rows('admin_scoreboard')): the_row(); ?>
                                                 <?php
@@ -1408,200 +1399,205 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
 
                                                     <div class="cell">
                                                         <?php
-                                                        global $purchase_cost, $tp_demo, $pm_fee, $total_build, $total_holding, $open_space, $gst;
-                                                        $datas = array();
-                                                        if (trim(get_sub_field('field_is_manual')) == 'false') {
+                                                        if($noOrgData == true){ ?>
+                                                            <?php the_sub_field('admin_scoreboard_current'); ?>
+                                                        <?php }else{
+                                                            global $purchase_cost, $tp_demo, $pm_fee, $total_build, $total_holding, $open_space, $gst;
+                                                            $datas = array();
+                                                            if (trim(get_sub_field('field_is_manual')) == 'false') {
 
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
-                                                                $purchase_cost = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['purchase_cost'] = $loop_data['final_amount'];
-                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs')) {
-                                                                $_SESSION['datas']['purchase_cost'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
-                                                                $tp_demo = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['tp_demo'] = $loop_data['final_amount'];
-                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo')) {
-                                                                $_SESSION['datas']['tp_demo'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
-                                                                $pm_fee = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['pm_fee'] = $loop_data['final_amount'];
-                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee')) {
-                                                                $_SESSION['datas']['pm_fee'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
-                                                                $total_build = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['total_build'] = $loop_data['final_amount'];
-                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build')) {
-                                                                $_SESSION['datas']['total_build'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
-                                                                $total_holding = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['total_holding'] = $loop_data['final_amount'];
-                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding')) {
-                                                                $_SESSION['datas']['total_holding'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
-                                                                $open_space = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['open_space'] = $loop_data['final_amount'];
-                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space')) {
-                                                                $_SESSION['datas']['open_space'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
-                                                                $gst = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['gst'] = $loop_data['final_amount'];
-                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'GST')) {
-                                                                $_SESSION['datas']['gst'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                            if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
-                                                                && trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
-                                                                $total_sales = $loop_data['final_amount'];
-                                                                $_SESSION['datas']['total_sales'] = $loop_data['final_amount'];
-                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0.00';
-                                                            } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales')) {
-                                                                $_SESSION['datas']['total_sales'] = '0.00';
-                                                                echo '$ 0.00';
-                                                            }
-
-                                                        }
-                                                        else if (trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
-                                                                $purchase_cost = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['purchase_cost'] = $purchase_cost;
-                                                                echo $purchase_cost ? '$ ' . number_format($purchase_cost, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
-                                                                $tp_demo = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['tp_demo'] = $tp_demo;
-                                                                echo $tp_demo ? '$ ' . number_format($tp_demo, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
-                                                                $pm_fee = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['pm_fee'] = $pm_fee;
-                                                                echo $pm_fee ? '$ ' . number_format($pm_fee, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
-                                                                $total_build = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['total_build'] = $total_build;
-                                                                echo $total_build ? '$ ' . number_format($total_build, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
-                                                                $total_holding = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['total_holding'] = $total_holding;
-                                                                echo $total_holding ? '$ ' . number_format($total_holding, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
-                                                                $open_space = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['open_space'] = $open_space;
-                                                                echo $open_space ? '$ ' . number_format($open_space, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
-                                                                $gst = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['gst'] = $gst;
-                                                                echo $gst ? '$ ' . number_format($gst, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
-                                                                $total_sales = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                                $_SESSION['datas']['total_sales'] = $total_sales;
-                                                                echo $total_sales ? '$ ' . number_format($total_sales, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                        }
-
-
-                                                        if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs' && trim(get_sub_field('field_is_manual')) == 'false') {
-                                                            if (isset($_SESSION['datas'])) {
-                                                                $values = $_SESSION['datas'];
-                                                                $total_cost = $values['purchase_cost'] + $values['tp_demo'] + $values['pm_fee'] + $values['total_build'] + $values['total_holding'] + $values['open_space'] + $values['gst'];
-                                                                $_SESSION['datas']['total_costs'] = $total_cost;
-                                                                echo $total_cost ? '$ ' . number_format($total_cost, 2, '.', ',') : '$ 0.00';
-                                                            }
-                                                        }
-                                                        else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs' && trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            echo get_sub_field('admin_scoreboard_current');
-                                                        }
-
-                                                        if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Profit' && trim(get_sub_field('field_is_manual')) == 'false') {
-                                                            if (isset($_SESSION['datas'])) {
-                                                                $values = $_SESSION['datas'];
-                                                                if (isset($values['total_sales']) && isset($values['total_costs'])) {
-                                                                    $net_profit = $values['total_sales'] - $values['total_costs'];
-                                                                    $_SESSION['datas']['net_profit'] = $net_profit;
-                                                                    echo $net_profit ? '$ ' . number_format($net_profit, 2, '.', ',') : '$ 0.00';
-                                                                } else {
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
+                                                                    $purchase_cost = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['purchase_cost'] = $loop_data['final_amount'];
+                                                                    echo $purchase_cost ? '$ ' . str_replace("-","- ",number_format($purchase_cost, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs')) {
+                                                                    $_SESSION['datas']['purchase_cost'] = '0.00';
                                                                     echo '$ 0.00';
                                                                 }
-                                                            }
-                                                        }
-                                                        else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Profit' && trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            echo get_sub_field('admin_scoreboard_current');
-                                                        }
 
-                                                        if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Project ROI' && trim(get_sub_field('field_is_manual')) == 'false') {
-                                                            if (isset($_SESSION['datas'])) {
-                                                                $values = $_SESSION['datas'];
-                                                                if (isset($values['net_profit']) && isset($values['total_costs'])) {
-                                                                    $net_pro_roi = $values['net_profit'] / $values['total_costs'];
-                                                                    echo $net_pro_roi ? '$ ' . number_format($net_pro_roi, 2, '.', ',') : '$ 0.00';
-                                                                } else {
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
+                                                                    $tp_demo = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['tp_demo'] = $loop_data['final_amount'];
+                                                                    echo $tp_demo ? '$ ' . str_replace("-","- ",number_format($tp_demo, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo')) {
+                                                                    $_SESSION['datas']['tp_demo'] = '0.00';
                                                                     echo '$ 0.00';
                                                                 }
-                                                            }
-                                                        }
-                                                        else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Project ROI' && trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            echo get_sub_field('admin_scoreboard_current');
-                                                        }
 
-                                                        if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE') {
-                                                            if (isset($_SESSION['datas'])) {
-                                                                $values = $_SESSION['datas'];
-                                                                $percentage = trim(str_replace("%", "", get_field('field_is_config_net_roe')));
-                                                                if (isset($values['net_profit']) && isset($values['total_costs']) && get_field('field_is_config_net_roe')) {
-                                                                    $totalValue = $values['total_costs'];
-                                                                    $finalValue = ($percentage / 100) * $totalValue;
-                                                                    $net_roe = $values['net_profit'] / $finalValue;
-                                                                    $net_roe_val = bcdiv($net_roe, 1, 2);
-                                                                    echo '$ ' . $net_roe_val;
-                                                                } else {
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
+                                                                    $pm_fee = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['pm_fee'] = $loop_data['final_amount'];
+                                                                    echo $pm_fee ? '$ ' . str_replace("-","- ",number_format($pm_fee, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee')) {
+                                                                    $_SESSION['datas']['pm_fee'] = '0.00';
                                                                     echo '$ 0.00';
                                                                 }
-                                                            }
-                                                        } else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE' && trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            echo get_sub_field('admin_scoreboard_current');
-                                                        }
 
-                                                        if (trim(get_sub_field('admin_scoreboard_label')) == 'Days' && trim(get_sub_field('field_is_manual')) == 'false') {
-                                                            echo get_sub_field('admin_scoreboard_original');
-                                                        } else if (trim(get_sub_field('admin_scoreboard_label')) == 'Days' && trim(get_sub_field('field_is_manual')) == 'true') {
-                                                            echo get_sub_field('admin_scoreboard_current');
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
+                                                                    $total_build = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['total_build'] = $loop_data['final_amount'];
+                                                                    echo $total_build ? '$ ' . str_replace("-","- ",number_format($total_build, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build')) {
+                                                                    $_SESSION['datas']['total_build'] = '0.00';
+                                                                    echo '$ 0.00';
+                                                                }
+
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
+                                                                    $total_holding = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['total_holding'] = $loop_data['final_amount'];
+                                                                    echo $total_holding ? '$ ' . str_replace("-","- ",number_format($total_holding, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding')) {
+                                                                    $_SESSION['datas']['total_holding'] = '0.00';
+                                                                    echo '$ 0.00';
+                                                                }
+
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
+                                                                    $open_space = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['open_space'] = $loop_data['final_amount'];
+                                                                    echo $open_space ? '$ ' . str_replace("-","- ",number_format($open_space, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space')) {
+                                                                    $_SESSION['datas']['open_space'] = '0.00';
+                                                                    echo '$ 0.00';
+                                                                }
+
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
+                                                                    $gst = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['gst'] = $loop_data['final_amount'];
+                                                                    echo $gst ? '$ ' . str_replace("-","- ",number_format($gst, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'GST')) {
+                                                                    $_SESSION['datas']['gst'] = '0.00';
+                                                                    echo '$ 0.00';
+                                                                }
+
+                                                                if (($loop_data && trim($loop_data['name']) == trim(get_sub_field('admin_scoreboard_label')))
+                                                                    && trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
+                                                                    $total_sales = $loop_data['final_amount'];
+                                                                    $_SESSION['datas']['total_sales'] = $loop_data['final_amount'];
+                                                                    echo $total_sales ? '$ ' . str_replace("-","- ",number_format($total_sales, 2, '.', ',')) : '$ 0.00';
+                                                                } else if (($loop_data == false) && (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales')) {
+                                                                    $_SESSION['datas']['total_sales'] = '0.00';
+                                                                    echo '$ 0.00';
+                                                                }
+
+                                                            }
+                                                            else if (trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
+                                                                    $purchase_cost = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['purchase_cost'] = $purchase_cost;
+                                                                    echo $purchase_cost ? '$ ' . str_replace("-","- ",number_format($purchase_cost, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
+                                                                    $tp_demo = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['tp_demo'] = $tp_demo;
+                                                                    echo $tp_demo ? '$ ' . str_replace("-","- ",number_format($tp_demo, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
+                                                                    $pm_fee = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['pm_fee'] = $pm_fee;
+                                                                    echo $pm_fee ? '$ ' . str_replace("-","- ",number_format($pm_fee, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
+                                                                    $total_build = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['total_build'] = $total_build;
+                                                                    echo $total_build ? '$ ' . str_replace("-","- ",number_format($total_build, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
+                                                                    $total_holding = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['total_holding'] = $total_holding;
+                                                                    echo $total_holding ? '$ ' . str_replace("-","- ",number_format($total_holding, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
+                                                                    $open_space = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['open_space'] = $open_space;
+                                                                    echo $open_space ? '$ ' . str_replace("-","- ",number_format($open_space, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
+                                                                    $gst = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['gst'] = $gst;
+                                                                    echo $gst ? '$ ' . str_replace("-","- ",number_format($gst, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
+                                                                    $total_sales = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                    $_SESSION['datas']['total_sales'] = $total_sales;
+                                                                    echo $total_sales ? '$ ' . str_replace("-","- ",number_format($total_sales, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                            }
+
+                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs' && trim(get_sub_field('field_is_manual')) == 'false') {
+                                                                if (isset($_SESSION['datas'])) {
+                                                                    $values = $_SESSION['datas'];
+                                                                    $total_cost = $values['purchase_cost'] + $values['tp_demo'] + $values['pm_fee'] + $values['total_build'] + $values['total_holding'] + $values['open_space'] + $values['gst'];
+                                                                    $_SESSION['datas']['total_costs'] = $total_cost;
+                                                                    echo $total_cost ? '$ ' . str_replace("-","- ",number_format($total_cost, 2, '.', ',')) : '$ 0.00';
+                                                                }
+                                                            }
+                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs' && trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                echo get_sub_field('admin_scoreboard_current');
+                                                            }
+
+                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Profit' && trim(get_sub_field('field_is_manual')) == 'false') {
+                                                                if (isset($_SESSION['datas'])) {
+                                                                    $values = $_SESSION['datas'];
+                                                                    if (isset($values['total_sales']) && isset($values['total_costs'])) {
+                                                                        $net_profit = $values['total_sales'] - $values['total_costs'];
+                                                                        $_SESSION['datas']['net_profit'] = $net_profit;
+                                                                        echo $net_profit ? '$ ' . str_replace("-","- ",number_format($net_profit, 2, '.', ',')) : '$ 0.00';
+                                                                    } else {
+                                                                        echo '$ 0.00';
+                                                                    }
+                                                                }
+                                                            }
+                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Profit' && trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                echo get_sub_field('admin_scoreboard_current');
+                                                            }
+
+                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Project ROI' && trim(get_sub_field('field_is_manual')) == 'false') {
+                                                                if (isset($_SESSION['datas'])) {
+                                                                    $values = $_SESSION['datas'];
+                                                                    if (isset($values['net_profit']) && isset($values['total_costs'])) {
+                                                                        $net_pro_roi = $values['net_profit'] / $values['total_costs']*100;
+                                                                        $_SESSION['datas']['net_project_roi'] = $net_pro_roi;
+                                                                        echo $net_pro_roi ? str_replace("-","- ",number_format($net_pro_roi, 2, '.', ',')).'%' : '0.00%';
+                                                                    } else {
+                                                                        echo '0.00%';
+                                                                    }
+                                                                }
+                                                            }
+                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Project ROI' && trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                echo get_sub_field('admin_scoreboard_current');
+                                                            }
+
+                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE') {
+                                                                if (isset($_SESSION['datas'])) {
+                                                                    $values = $_SESSION['datas'];
+                                                                    $percentage = trim(str_replace("%", "", get_field('field_is_config_net_roe')));
+                                                                    if (isset($values['net_profit']) && isset($values['total_costs']) && get_field('field_is_config_net_roe')) {
+                                                                        $totalValue = $values['total_costs'];
+                                                                        $finalValue = ($percentage / 100) * $totalValue;
+                                                                        $net_roe = $values['net_profit'] / $finalValue*100;
+                                                                        $net_roe_val = bcdiv($net_roe, 1, 2);
+                                                                        $_SESSION['datas']['net_roe'] = $net_roe_val;
+                                                                        echo str_replace("-","- ",$net_roe_val).'%';
+                                                                    } else {
+                                                                        echo '0.00%';
+                                                                    }
+                                                                }
+                                                            } else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE' && trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                echo get_sub_field('admin_scoreboard_current');
+                                                            }
+
+                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Days' && trim(get_sub_field('field_is_manual')) == 'false') {
+                                                                echo get_sub_field('admin_scoreboard_original');
+                                                            } else if (trim(get_sub_field('admin_scoreboard_label')) == 'Days' && trim(get_sub_field('field_is_manual')) == 'true') {
+                                                                echo get_sub_field('admin_scoreboard_current');
+                                                            }
                                                         }
                                                         ?>
                                                     </div>
@@ -1609,149 +1605,288 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                                     <div class="cell variation<?php if (get_sub_field('admin_scoreboard_comment')): ?> hover<?php endif; ?>"
                                                          style="color: <?php the_sub_field('admin_scoreboard_variation_color'); ?>">
                                                         <?php
-                                                        if (trim(get_sub_field('field_is_manual')) == 'false') {
-                                                            $budget = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
-                                                            if (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['purchase_cost'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                        if($noOrgData == true){ ?>
+                                                            <?php the_sub_field('admin_scoreboard_variation'); ?>
+                                                        <?php }else{
+                                                            if (trim(get_sub_field('field_is_manual')) == 'false') {
+                                                                $budget = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_current')));
+                                                                if (trim(get_sub_field('admin_scoreboard_label')) == 'Purchase Costs') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['purchase_cost']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['tp_demo'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'TP & Demo') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['tp_demo']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['pm_fee'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'PM Fee') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['pm_fee']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['total_build'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Build') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['total_build']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['total_holding'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Holding') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['total_holding']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['open_space'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Open Space') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['open_space']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
-                                                                    echo '-';
                                                                 }
-                                                            }
-                                                            else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
-                                                                if (isset($_SESSION['datas'])) {
-                                                                    $actual_cost = 0;
-                                                                    $values = $_SESSION['datas'];
-                                                                    $actual_cost = $values['total_sales'];
-                                                                    if ($actual_cost && $budget) {
-                                                                        if ($actual_cost > $budget) {
-                                                                            $value = '$ ' . number_format(($actual_cost - $budget), 2, '.', ',');
-                                                                            echo "<span class=\"error_high\">$value</span>";
-                                                                        } else {
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['total_sales']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
                                                                             echo '-';
                                                                         }
                                                                     } else {
                                                                         echo '-';
                                                                     }
-                                                                } else {
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'GST') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['gst']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Costs') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['total_costs']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Total Sales') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['total_sales']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Profit') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['net_profit']));
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = '$ ' . number_format($value, 2, '.', ',');
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = '$ ' . str_replace("-","- ",number_format($value, 2, '.', ','));
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net Project ROI') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['net_project_roi']));
+//                                                                        $actual_cost = trim($values['net_project_roi'])*100;
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = number_format($value, 2, '.', ',').'%';
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = str_replace("-","- ",number_format($value, 2, '.', ',')).'%';
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else if (trim(get_sub_field('admin_scoreboard_label')) == 'Net ROE') {
+                                                                    if (isset($_SESSION['datas'])) {
+                                                                        $values = $_SESSION['datas'];
+                                                                        $actual_cost = trim(str_replace("-",'',$values['net_roe']));
+//
+                                                                        if(($budget)&&!empty($actual_cost)){
+                                                                            $value = $budget - $actual_cost;
+                                                                            if ($value>=0) {
+                                                                                $value = number_format($value, 2, '.', ',').'%';
+                                                                                echo "<span class=\"success_high\">$value</span>";
+                                                                            } else {
+                                                                                $value = str_replace("-","- ",number_format($value, 2, '.', ',')).'%';
+                                                                                echo "<span class=\"error_high\">$value</span>";
+                                                                            }
+                                                                        }else{
+                                                                            echo '-';
+                                                                        }
+                                                                    } else {
+                                                                        echo '-';
+                                                                    }
+                                                                }
+                                                                else {
                                                                     echo '-';
                                                                 }
                                                             }
                                                             else {
-                                                                echo '-';
+                                                                $manual_variation = trim(str_replace(["$", ","], ["", ""], get_sub_field('admin_scoreboard_variation')));
+                                                                $value = get_sub_field('admin_scoreboard_variation');
+                                                                if($manual_variation >= 0){
+                                                                    echo "<span class=\"success_high\">$value</span>";
+                                                                }else{
+                                                                    echo "<span class=\"error_high\">$value</span>";
+                                                                }
                                                             }
-                                                        } else {
-                                                            the_sub_field('admin_scoreboard_variation');
                                                         }
                                                         ?>
-
                                                         <?php if (get_sub_field('admin_scoreboard_comment')): ?>
                                                             <div class="tooltip">
                                                                 <span>
@@ -1769,12 +1904,8 @@ $details_res = $wpdb->get_results($detail_sql, ARRAY_A);
                                     <?php endif; ?>
                                 </div>
                             </div>
-
-
                             <div class="clear"></div>
-
                         </div>
-
                     </div>
                     <div class="custom-search overflow controls">
                         <form>
@@ -1855,13 +1986,11 @@ $current_user_id = get_current_user_id();
             // alert(editor);
             // alert(current_post_id);
 
-
             var data = {
                 action: 'add_comments',
                 editor: editor,
                 current_post_id: current_post_id,
-                currentuserid: currentuserid,
-
+                currentuserid: currentuserid
             };
             jQuery.ajax({
                 type: 'post',
@@ -1881,4 +2010,3 @@ $current_user_id = get_current_user_id();
 </script>
 <script src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
 <?php get_footer(); ?>
-
